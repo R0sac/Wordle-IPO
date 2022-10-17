@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="script.js"></script>
         <title>Benvingut a Wordle</title>
     </head>
     <body>
@@ -13,7 +14,7 @@
             <h1 id="titol">WORDLE</h1>
             <img src="wordleBanner.png" id="imgDreta">
             <img src="wordleBanner.png" id="imgEsquerra">
-            
+
             <div id="contInstruccions">
                 <h3>Instruccions</h3>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -23,10 +24,11 @@
                     It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently 
                     with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
             </div>
-            <h4>Introdueix un nom d'usuari:</h4>    
+            <h4>Introdueix un nom d'usuari:</h4>   
+            
             <form method="POST" action="cuadriculas.php">
-                <input type="text" id="inpUsuari" placeholder="Nom d'usuari"><br>
-                <input type="submit" id="botoUsuari" value="JUGAR"/>    
+                <input type="text" name="inpUsuari" id="inpUsuari" onkeyup="success()" placeholder="Nom d'usuari" ><br>
+                <input type="submit" disabled name="botoUsuari" id="botoUsuari" value="JUGAR"/>
             </form>
         </div>
     </body>
