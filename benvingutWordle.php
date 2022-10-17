@@ -27,8 +27,8 @@
             <h4>Introdueix un nom d'usuari:</h4>   
             
             <form method="POST" action="cuadriculas.php">
-                <input type="text" name="inpUsuari" id="inpUsuari" onkeyup="success()" placeholder="Nom d'usuari" ><br>
-                <input type="submit" disabled name="botoUsuari" id="botoUsuari" value="JUGAR"/>
+                <input type="text" id="inpUsuari" onkeyup="bloquejarBoton()" placeholder="Nom d'usuari" ><br>
+                <input type="submit" disabled id="botoUsuari" onclick="guardadNom()" value="JUGAR"/>
             </form>
         </div>
     </body>

@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=
     , initial-scale=1.0">
+    <script src="script.js"></script>
     <title>Wordle</title>
     
 </head>
 <body>
     <main id="contPrincipal">
             <h1 id="titol">WORDLE</h1>
+            <p id="nomUsuari"></p>
             <img src="wordleBanner.png" id="imgDreta">
             <img src="wordleBanner.png" id="imgEsquerra">
             <?php
