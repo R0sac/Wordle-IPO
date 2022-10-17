@@ -21,7 +21,7 @@
                 for ($i=1; $i <= $fila; $i++) {
                     echo "<tr>";
                     for ($j=1; $j <= $columna; $j++) { 
-                        echo "<td>";
+                        echo "<td></td>";
                     }
                     echo "</tr>";
                 }
