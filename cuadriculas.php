@@ -14,52 +14,20 @@
             <h1 id="titol">WORDLE</h1>
             <img src="wordleBanner.png" id="imgDreta">
             <img src="wordleBanner.png" id="imgEsquerra">
-
-            <table class="tablaLetras">
-                <tr>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                </tr>
-                <tr>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                </tr>
-                <tr>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                </tr>
-                <tr>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                </tr>
-                <tr>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                </tr>
-                <tr>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                    <td>A</td>
-                </tr>
-            </table>
-            <br>
+            <?php
+                $fila = 6;
+                $columna = 5;
+                echo "<table class='tablaLetras'>";
+                for ($i=1; $i <= $fila; $i++) {
+                    echo "<tr>";
+                    for ($j=1; $j <= $columna; $j++) { 
+                        echo "<td>";
+                    }
+                    echo "</tr>";
+                }
+                echo "</table>";
+            ?>
+            
             <div id="contInstruccions">
                 <table  class="tablaTeclado">
                     <tr>
