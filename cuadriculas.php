@@ -12,6 +12,13 @@
 </head>
 <body>
     <main id="contPrincipal">
+            <?php
+                function getRandomLine($filename) { 
+                $lines = file($filename); 
+                return $lines[array_rand($lines)]; 
+                }
+                $randomWord = getRandomLine("catala_5.txt");
+            ?>
             <h1 id="titol">WORDLE</h1>
             
             <img src="wordleBanner.png" id="imgDreta">
