@@ -24,11 +24,11 @@
                     It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently 
                     with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
             </div>
-            <h4>Introdueix un nom d'usuari:</h4>   
+            <h4>Introdueix un nom d'usuari:</h4>
             
             <form method="POST" action="cuadriculas.php">
-                <input type="text" id="inpUsuari" onkeyup="bloquejarBoton()" placeholder="Nom d'usuari" ><br>
-                <input type="submit" disabled id="botoUsuari" onclick="guardadNom()" value="JUGAR"/>
+                <input type="text" id="inpUsuari" name="inpUsuari" onkeyup="bloquejarBoton()" placeholder="Nom d'usuari" ><br>
+                <input type="submit" disabled id="botoUsuari" value="JUGAR"/>
             </form>
         </div>
     </body>
