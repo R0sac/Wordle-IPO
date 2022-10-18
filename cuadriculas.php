@@ -15,6 +15,7 @@
             <img src="wordleBanner.png" id="imgDreta">
             <img src="wordleBanner.png" id="imgEsquerra">
             <?php
+                echo "<p>".$_POST['inpUsuari']."</p>";
                 $fila = 6;
                 $columna = 5;
                 echo "<table class='tablaLetras'>";
