@@ -1,5 +1,5 @@
-cercs
-movil
+cerca
+moure
 gotes
 carta
 jugar
@@ -7,12 +7,12 @@ caixa
 coses
 porta
 potes
-camió
+cames
 porta
 potes
-Meses
+mesos
 cotxe
-camio
+canvi
 porta
 potes
 terra

@@ -1,4 +1,4 @@
-// CANVIAR NÚMEROS MIDES PER VARIABLES I ARREGLAR APAÑO IF DELETE I MIRAR SI FORS ANIDATS CALEN
+console.log(php_var);
 let userWord = "";
 let line = 1;
 function addLetter(letter){
@@ -121,13 +121,13 @@ function checkWord(randWord) {
     }
 
     if(countGreen==5){
-        alert("HAS GUANYAT");
+        setTimeout(function() { alert("HAS GUANYAT"); }, 0);
         var nodes = document.getElementById("contInstruccions").getElementsByTagName('*');
         for(var i = 0; i < nodes.length; i++){
             nodes[i].disabled = true;
         }
     } else if(line==6){
-        alert("HAS PERDUT");
+        setTimeout(function() { alert("HAS PERDUT"); }, 0);
         var nodes = document.getElementById("contInstruccions").getElementsByTagName('*');
         for(var i = 0; i < nodes.length; i++){
             nodes[i].disabled = true;
