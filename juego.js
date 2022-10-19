@@ -1,7 +1,6 @@
 // CANVIAR NÚMEROS MIDES PER VARIABLES I ARREGLAR APAÑO IF DELETE I MIRAR SI FORS ANIDATS CALEN
 let userWord = "";
 let line = 1;
-console.log(php_var);
 function addLetter(letter){
     flag=false;
 	for (i=line;i<7;i++){
@@ -22,15 +21,7 @@ function addLetter(letter){
             }
         }
         if (flag==true){
-            // if (j==5){
-            //     addEventListener('clickSend', function jumpLine(){
-
-            //     });
-            // }else{
                 break
-            // }
-            // console.log(document.getElementById('' + i + j).value);
-            // console.log(typeof document.getElementById('' + i + j).value)
         }
     }
 }
@@ -76,7 +67,7 @@ function jumpLine() {
     //console.log(document.getElementById('rw').value);
     //console.log("mouse");
     if(userWord.length==5){
-        checkWord("CAIXA");
+        checkWord(php_var);
         line+=1;
         userWord="";
     }
@@ -93,6 +84,7 @@ function bloquejarBoton() {
 function checkWord(randWord) {
     //console.log(randWord)
     posNonRep=0;
+    countGreen=0;
     for(i=1;i<userWord.length+1;i++){
         let letterPosition = randWord.indexOf(userWord[i-1]);
         //console.log(letterPosition);
@@ -104,6 +96,7 @@ function checkWord(randWord) {
                 document.getElementById('' + line + i).style.background = "green";
                 posNonRep+='' + i;
                 randWord = randWord.replace(randWord[letterPosition],"#");
+                countGreen+=1;
                 //console.log(randWord);
             }
         }    
@@ -125,5 +118,19 @@ function checkWord(randWord) {
                 //console.log(randWord);
             }  
         }  
+    }
+
+    if(countGreen==5){
+        alert("HAS GUANYAT");
+        var nodes = document.getElementById("contInstruccions").getElementsByTagName('*');
+        for(var i = 0; i < nodes.length; i++){
+            nodes[i].disabled = true;
+        }
+    } else if(line==6){
+        alert("HAS PERDUT");
+        var nodes = document.getElementById("contInstruccions").getElementsByTagName('*');
+        for(var i = 0; i < nodes.length; i++){
+            nodes[i].disabled = true;
+        }
     }
 }

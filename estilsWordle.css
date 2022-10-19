@@ -73,6 +73,17 @@ html, body {
 
 #titol{
     padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 70px;
+}
+#benvingut{
+    font-size: 22px;
+    font-family: Arial;
+    font-weight: bold;
+    padding-top: 10px;
 }
 #contInstruccions{
     background-color: #683611;
@@ -84,10 +95,14 @@ html, body {
     border-radius: 10px;
     z-index: 1;
     overflow: hidden;
+    font-family: Arial;
+    font-size: 15.7px;
 }
 
 #contPrincipal h4{
     margin-bottom: 1px;
+    font-family: Arial;
+    font-size: 17px;
 }
 
 form{
