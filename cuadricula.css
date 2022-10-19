@@ -6,20 +6,29 @@ html, body {
 #contPrincipal{
     background-color: #F6E8B8;
     height: 99%;
-    width: 80%; 
+    width: 80%;
     margin: auto;
     margin-top:10px;
     margin-bottom:0px;
     text-align: center;
-    padding: 5px;
+    padding: 0px;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
 }
 
-#contPrincipal img#imgDreta{
+#contDreta{
+    width: 20%;
+    height: 100%;
+    float: right;
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+#contDreta img#imgDreta{
     transform: rotate(90deg);
-    height:678px;
+    height:auto;
     width: 1474px;
     float: right;
     position: absolute;
@@ -28,15 +37,32 @@ html, body {
     z-index: 0;
 }
 
-#contPrincipal img#imgEsquerra{
+#contEsquerra{
+    width: 20%;
+    height: 100%;
+    float: left;
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+#contEsquerra img#imgEsquerra{
     transform: rotate(90deg);
-    height:678px;
+    height:auto;
     width: 1474px;
-    float: right;
+    float: left;
     position: absolute;
-    right: 875px;
+    left: -800px;
     top: 250px;
     z-index: 0;
+}
+
+#contCentre{
+    width: 40%;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+    overflow: hidden;
 }
 
 #titol{
@@ -45,16 +71,15 @@ html, body {
 .tablaLetras{
     border-spacing: 10px;
     empty-cells: show;
-    width: 30%;
-    margin: 5% 35%;
+    width: 80%;
+    margin: 5% 10%;
     height: 20%;
 }
 #contInstruccions{
     background-color: #683611;
     color: #F6E8B8;
-    width: 45%;
+    width: 99%;
     height: 12%;
-    margin: 5% 28%;
     padding: 3px;
     border-radius: 10px;
     overflow: hidden;

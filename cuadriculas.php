@@ -11,9 +11,22 @@
 </head>
 <body>
     <main id="contPrincipal">
-            <h1 id="titol">WORDLE</h1>
+        <div id="contDreta">
             <img src="wordleBanner.png" id="imgDreta">
+        </div>
+        <div id="contEsquerra">
             <img src="wordleBanner.png" id="imgEsquerra">
+        </div>
+        <div id="contCentre">
+            <?php
+                function getRandomLine($filename) { 
+                    $lines = file($filename); 
+                    return $lines[array_rand($lines)];
+                }
+                $randomWord = getRandomLine("catala_5.txt");
+                echo $randomWord;
+            ?>
+            <h1 id="titol">WORDLE</h1>
             <?php
                 echo "<p>".$_POST['inpUsuari']."</p>";
                 $fila = 6;
@@ -68,8 +81,13 @@
                     </tr>
                 </table>
             </div>
+        </div>
     </main>
-    <button onclick="addLetter()" id="boton">Enviar</button>
-    <script src="juego.js"></script>
+    <script>
+        <?php
+            echo "var php_var = '$randomWord';"; 
+        ?>
+    </script>
+    <script src="./juego.js"></script>
 </body>
 </html>
