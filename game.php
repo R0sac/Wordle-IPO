@@ -9,6 +9,19 @@
     <title>Wordle</title>
 </head>
 <body>
+        <noscript>
+            <h1>Javascript NO ESTÀ ACTIVAT</h1>
+            <div class="deshabilitado">
+                Javascript està deshabilitat al vostre navegador web.<br />
+                Por favor, para ver correctamente este sitio,<br />
+                <b><i>habiliti javascript</i></b>.<br />
+                <br />
+                Per veure les instruccions per habilitar javascript<br />
+                al vostre navegador, feu click 
+                <a href="https://support.google.com/adsense/answer/12654?hl=ca" 
+                target="_blank">aquí</a>.
+            </div>
+        </noscript>
     <main id="contPrincipal">
         <div id="contDreta">
             <img src="wordleBanner.png" id="imgDreta">

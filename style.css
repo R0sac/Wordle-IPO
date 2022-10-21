@@ -2,6 +2,15 @@ html, body {
     height: 99%;
     background-color: #683611;
     color: #683611;
+    
+}
+noscript{
+    color: red;
+    text-align: center;
+    font-family: Arial;
+}
+noscript a{
+    color: white;
 }
 
 #contPrincipal{
@@ -272,3 +281,4 @@ form{
 	0% { background-position: 0% 50%; }
 	100% { background-position: 100% 50%; }
 }
+
