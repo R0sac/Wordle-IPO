@@ -18,7 +18,9 @@
         <div id="contCentre">
             <h1 id="titol">WORDLE</h1>
             <img src="wordleDerrota.gif" id="imgCentre">
-            <h1 id="textFinalPartida">HAS PERDUT!</h1>
+            <div class="bordePerderParitda">
+                <h1 id="textPerderPartida">HAS PERDUT!</h1>
+            </div>
         </div>
     </div>
 </body>

@@ -3,6 +3,7 @@ html, body {
     background-color: #683611;
     color: #683611;
 }
+
 #contPrincipal{
     background-color: #F6E8B8;
     height: 99%;
@@ -63,6 +64,7 @@ html, body {
     margin: auto;
     text-align: center;
     overflow: hidden;
+    margin-top: 5%;
 }
 
 #contPrincipal img#imgCentre{
@@ -79,6 +81,7 @@ html, body {
     font-weight: bold;
     font-size: 70px;
 }
+
 #benvingut{
     font-size: 22px;
     font-family: Arial;
@@ -109,6 +112,7 @@ html, body {
     border-radius: 10px;
     overflow: hidden;
 }
+
 .tablaTeclado{
     border-spacing: 10px;
     width: 90%;
@@ -116,10 +120,12 @@ html, body {
     height: 40%;
     border: 3px solid #683611;
 }
+
 .tablaTeclado td{
     text-align: center;
     width: 10%;
 }
+
 .tablaLetras td{
     border: 3px solid #683611;
     text-align: center;
@@ -131,6 +137,7 @@ html, body {
     height: 10%;
     font-family: 'Arial';
 }
+
 .boton_personalizado{
     text-decoration: none;
     padding: 10px;
@@ -141,6 +148,7 @@ html, body {
     border-radius: 6px;
     border: 2px solid #683611;
   }
+
 .boton_personalizado:hover{
     opacity: 60%;
     text-decoration: none;
@@ -181,10 +189,12 @@ form{
     color: #F6E8B8;
     font-size: 90%;
 }
+
 #inpUsuari::placeholder{
     text-align: center;
     color: #F6E8B8;
 }
+
 #botoUsuari{
     margin-top:3%;
     width: 40%;
@@ -195,12 +205,70 @@ form{
     font-weight: bold;
     border-radius: 10px;
 }
+
 #botoUsuari:hover{
     background-color: #F6E8B8;
     color: #683611;
     border: 5px solid #683611;
 }
 
-#textFinalPartida{
-    font-size: 50px;
+#textPerderPartida{
+    font-size: 80px;
+    font-family: Arial;
+    text-shadow: 0 0 80px rgba(236, 236, 236, 0.897);
+    letter-spacing: 0;
+    display: block;
+
+    /*Colocar imagen backgound*/
+    background: url(color.png) repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+
+    /*Animar imagen backgound*/
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: perder 80s linear infinite;
+    
+    /*Activar aceleracion de hardware*/
+    -webkit-transform: translate3d(0,0,0);
+	-webkit-backface-visibility: hidden;
+}
+
+.bordePerderParitda{
+    border: 4px double #96581C;
+    margin-top: 5%;
+    border-radius: 30px;
+}
+
+#textGanarPartida{
+    font-size: 80px;
+    font-family: Arial;
+    text-shadow: 0 0 80px rgba(236, 236, 236, 0.897);
+    letter-spacing: 0;
+    display: block;
+
+    /*Colocar imagen backgound*/
+    background: url(color.png) repeat-y;
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+
+    /*Animar imagen backgound*/
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: perder 80s linear infinite;
+    
+    /*Activar aceleracion de hardware*/
+    -webkit-transform: translate3d(0,0,0);
+	-webkit-backface-visibility: hidden;
+}
+
+.bordeGanarParitda{
+    border: 4px double #96581C;
+    margin-top: 5%;
+    border-radius: 30px;
+}
+
+@-webkit-keyframes perder {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
 }

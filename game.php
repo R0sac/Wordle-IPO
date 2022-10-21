@@ -20,7 +20,7 @@
             <?php
                 function getRandomLine($filename) { 
                     $lines = file($filename); 
-                    return strtoupper(substr($lines[array_rand($lines)],0,-2));
+                    return strtoupper(substr($lines[array_rand($lines)],0,-1));
                 }
                 $randomWord = getRandomLine("catala_5.txt");
             ?>
