@@ -121,13 +121,13 @@ function checkWord(randWord) {
     }
 
     if(countGreen==5){
-        setTimeout(function() { alert("HAS GUANYAT"); }, 0);
+        setTimeout(function() { alert("HAS GUANYAT"); }, 100);
         var nodes = document.getElementById("contInstruccions").getElementsByTagName('*');
         for(var i = 0; i < nodes.length; i++){
             nodes[i].disabled = true;
         }
     } else if(line==6){
-        setTimeout(function() { alert("HAS PERDUT"); }, 0);
+        setTimeout(function() { alert("HAS PERDUT"); }, 100);
         var nodes = document.getElementById("contInstruccions").getElementsByTagName('*');
         for(var i = 0; i < nodes.length; i++){
             nodes[i].disabled = true;
