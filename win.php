@@ -18,8 +18,8 @@
         <div id="contCentre">
             <h1 id="titol">WORDLE</h1>
             <img src="wordleVictoria.gif" id="imgCentre">
-            <div class="bordeGanarParitda">
-            <h1 id="textGanarPartida">HAS GUANYAT!</h1>
+            <div class="bordeFinalParitda">
+            <h1 id="textFinalPartida">HAS GUANYAT!</h1>
             </div>
 
         </div>
