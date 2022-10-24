@@ -14,10 +14,10 @@
 <body>
     <main id="contPrincipal">
         <div id="contDreta">
-            <img src="wordleBanner.png" id="imgDreta">
+            <img src="wordleBanner.png" id="imgDretaJugar">
         </div>
         <div id="contEsquerra">
-            <img src="wordleBanner.png" id="imgEsquerra">
+            <img src="wordleBanner.png" id="imgEsquerraJugar">
         </div>
         <div id="contCentre">
             <div id="contHeader">

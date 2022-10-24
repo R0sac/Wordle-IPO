@@ -14,10 +14,10 @@
     <body>
         <div id="contPrincipal">
             <div id="contDreta">
-                <img src="wordleBanner.png" id="imgDreta">
+                <img src="wordleBanner.png" id="imgDretaBenv">
             </div>
             <div id="contEsquerra">
-                <img src="wordleBanner.png" id="imgEsquerra">
+                <img src="wordleBanner.png" id="imgEsquerraBenv">
             </div>
             <div id="contCentre">
                 <p id="benvingut">Benvingut a</p>
@@ -28,7 +28,7 @@
                     L' objectiu és simple, endevinar la paraula oculta. La paraula té 5 lletres i tens 6 intents per endevinar-la. La paraula és la mateixa per a totes les persones en aquell dia.<br>
                     Cada intent ha de ser una paraula vàlida. A cada ronda el joc pinta cada lletra d'un color indicant si aquesta lletra es troba o no a la paraula i si es troba a la posició correcta.</p>
                     <ul style="list-style:none;">
-                        <li><font color="green"><b>VERD</b></font> significa que la lletra R està en la paraula i en la posició <font color="green"><b>CORRECTA</b></font>.</li>
+                        <li><font color="green"><b>VERD</b></font> significa que la lletra està en la paraula i en la posició <font color="green"><b>CORRECTA</b></font>.</li>
                         <li><font color="yellow"><b>GROC</b></font> significa que la lletra està present en la paraula però en la posició <font color="yellow"><b>INCORRECTA</b></font>.</li>
                         <li><font color="grey"><b>GRIS</b></font> significa que la lletra <font color="grey"><b>NO</b></font> està en la paraula.</li>
                     </ul>
