@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +19,14 @@
             <img src="wordleBanner.png" id="imgEsquerra">
         </div>
         <div id="contCentre">
+            <div id="contHeader">
+                <button onclick="document.location.href='./index.php';">HOME</button>
+                <button onclick="document.location.href='./game.php';">JUGAR</button>
+            </div>
             <h1 id="titol">WORDLE</h1>
+            <?php
+                echo "<p id='nameuser'>".$_SESSION['userName']."</p>";
+            ?>
             <img src="wordleVictoria.gif" id="imgCentre">
             <h1 id="textFinalPartida">HAS GUANYAT!</h1>
         </div>

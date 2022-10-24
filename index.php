@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -18,7 +21,7 @@
             </div>
             <div id="contCentre">
                 <p id="benvingut">Benvingut a</p>
-                <h1 id="titol">WORDLE</h1>
+                <h1 id="titolIndex">WORDLE</h1>
                 <div id="contInstruccions">
                     <h3>INSTRUCCIONS</h3>
                     <p>Qualsevol persona pot jugar a la paraula del dia.<br>

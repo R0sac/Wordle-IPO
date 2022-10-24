@@ -17,6 +17,37 @@ html, body {
     overflow: hidden;
 }
 
+#contHeader{
+    background-color: #683611;
+    border: 2px solid #683611;
+    width: 98%;
+    height: 2%;
+    margin: auto;
+    margin-top: 1%;
+    border-radius: 10px;
+    padding-top: 0.3%;
+    padding-bottom: 0.3%;
+}
+
+#contHeader button{
+    width: 25%;
+    height: 100%;
+    background-color: #683611;
+    color: #F6E8B8;
+    font-size: 100%;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 10px;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+#contHeader button:hover{
+    background-color: #96581C;
+    color: #F6E8B8;
+    border: 1px solid #000;
+}
+
 #contDreta{
     width: 20%;
     height: 100%;
@@ -71,10 +102,21 @@ html, body {
     margin-top: 9%;
 }
 
+
+#titolIndex{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 10px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 70px;
+}
+
 #titol{
     padding-top: 0px;
     padding-bottom: 0px;
-    margin-top: 0px;
+    margin-top: 30px;
+    margin-bottom: 0px;
     font-family: Arial;
     font-weight: bold;
     font-size: 70px;
@@ -90,6 +132,16 @@ html, body {
     font-size: 22px;
     font-family: Arial;
     font-weight: bold;
+    float: left;
+    margin-left: 25%;
+}
+
+#pointUser{
+    font-size: 22px;
+    font-family: Arial;
+    font-weight: bold;
+    float: right;
+    margin-right: 25%;
 }
 
 .tablaLetras{
@@ -196,8 +248,8 @@ form{
     border-radius: 10px;
 }
 #botoUsuari:hover{
-    background-color: #F6E8B8;
-    color: #683611;
+    background-color: #96581C;
+    color: #F6E8B8;
     border: 5px solid #683611;
 }
 
