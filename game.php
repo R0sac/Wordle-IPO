@@ -1,7 +1,10 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="cuadricula.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=
@@ -17,6 +20,10 @@
             <img src="wordleBanner.png" id="imgEsquerra">
         </div>
         <div id="contCentre">
+            <div id="contHeader">
+                <button onclick="document.location.href='./index.php';">HOME</button>
+                <button onclick="document.location.href='./game.php';">JUGAR</button>
+            </div>
             <?php
                 function getRandomLine($filename) { 
                     $lines = file($filename); 
@@ -26,7 +33,8 @@
             ?>
             <h1 id="titol">WORDLE</h1>
             <?php
-                echo "<p id='nameuser'>".$_POST['inpUsuari']."</p>";
+                $_SESSION['userName'] = $_POST['inpUsuari'];
+                echo "<p id='nameuser'>".$_SESSION['userName']."</p>";
                 $fila = 6;
                 $columna = 5;
                 echo "<table class='tablaLetras'>";
@@ -40,7 +48,7 @@
                 echo "</table>";
             ?>
             
-            <div id="contInstruccions">
+            <div id="contTeclat">
             <table  class="tablaTeclado">
                     <tr>
                         <td><button onclick="addLetter('Q')" id="Q" class="boton_personalizado">Q</button></td>
