@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php session_start(); 
+include '/lang/ca.php';
+include '/lang/en.php';
+include '/lang/es.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -18,20 +22,26 @@
                 <img src="wordleBanner.png" id="imgEsquerra">
             </div>
             <div id="contCentre">
-                <p id="benvingut">Benvingut a</p>
+                <p id="benvingut"></p>
                 <h1 id="titolIndex">WORDLE</h1>
+                <form>
+                    <label for="lang"></label>
+                    <select name="idioma" id="idioma">
+                        <option value="ca" selected>Català</option>
+                        <option value="en">English</option>
+                        <option value="es">Castellano</option>
+                    </select>
+                </form>
                 <div id="contInstruccions">
-                    <h3>INSTRUCCIONS</h3>
-                    <p>Qualsevol persona pot jugar a la paraula del dia.<br>
-                    L' objectiu és simple, endevinar la paraula oculta. La paraula té 5 lletres i tens 6 intents per endevinar-la. La paraula és la mateixa per a totes les persones en aquell dia.<br>
-                    Cada intent ha de ser una paraula vàlida. A cada ronda el joc pinta cada lletra d'un color indicant si aquesta lletra es troba o no a la paraula i si es troba a la posició correcta.</p>
+                    <h3></h3>
+                    <p></p>
                     <ul style="list-style:none;">
-                        <li><font color="green"><b>VERD</b></font> significa que la lletra R està en la paraula i en la posició <font color="green"><b>CORRECTA</b></font>.</li>
-                        <li><font color="yellow"><b>GROC</b></font> significa que la lletra està present en la paraula però en la posició <font color="yellow"><b>INCORRECTA</b></font>.</li>
-                        <li><font color="grey"><b>GRIS</b></font> significa que la lletra <font color="grey"><b>NO</b></font> està en la paraula.</li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
                     </ul>
                 </div>
-                <h4>Introdueix un nom d'usuari:</h4>
+                <h4></h4>
                 
                 <form method="POST" action="game.php">
                     <input type="text" id="inpUsuari" name="inpUsuari" onkeyup="bloquejarBoton()" placeholder="Nom d'usuari" ><br>
