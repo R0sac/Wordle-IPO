@@ -70,6 +70,7 @@ function jumpLine() {
         checkWord(php_var);
         line+=1;
         userWord="";
+        soundBadWord();
     }
 }
 
@@ -97,9 +98,10 @@ function checkWord(randWord) {
                 posNonRep+='' + i;
                 randWord = randWord.replace(randWord[letterPosition],"#");
                 countGreen+=1;
+                
                 //console.log(randWord);
             }
-        }    
+        }
     }
     for(i=1;i<userWord.length+1;i++){
         //console.log(posNonRep);
@@ -114,10 +116,12 @@ function checkWord(randWord) {
                 document.getElementById('' + line + i).style.background = "grey";
             } else {
                 document.getElementById('' + line + i).style.background = "yellow";
+                
                 randWord = randWord.replace(randWord[letterPosition],"#");
+                
                 //console.log(randWord);
             }  
-        }  
+        }
     }
 
     if(countGreen==5){
@@ -126,9 +130,8 @@ function checkWord(randWord) {
         var nodes = document.getElementById("contInstruccions").getElementsByTagName('*');
         for(var i = 0; i < nodes.length; i++){
             nodes[i].disabled = true;
-        }
-        
-        
+            
+        }   
     } else if(line==6){
         //setTimeout(function() { alert("HAS PERDUT"); }, 100);
         setTimeout(function(){document.location.href="./lose.php";},500)
@@ -138,4 +141,24 @@ function checkWord(randWord) {
         }
         
     }
+}
+/*
+window.addEventListener("load",function(){
+	document.getElementById("play").addEventListener("click",soundYouLose);			
+});
+*/
+function soundBadWord(){
+	var sonido = document.createElement("iframe");
+	sonido.setAttribute("src","bad_word.mp3");
+	document.body.appendChild(sonido);
+}
+function soundYouLose(){
+	var sonido = document.createElement("iframe");
+	sonido.setAttribute("src","lose.mp3");
+	document.body.appendChild(sonido);
+}
+function soundYouWin(){
+	var sonido = document.createElement("iframe");
+	sonido.setAttribute("src","win.mp3");
+	document.body.appendChild(sonido);
 }
