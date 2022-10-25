@@ -1,7 +1,5 @@
 <?php session_start(); 
-include '/lang/ca.php';
-include '/lang/en.php';
-include '/lang/es.php';
+include "configuracion.php"
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -22,30 +20,24 @@ include '/lang/es.php';
                 <img src="wordleBanner.png" id="imgEsquerra">
             </div>
             <div id="contCentre">
-                <p id="benvingut"></p>
+                <p id="benvingut"><?php echo $lang['wellcome']?></p>
                 <h1 id="titolIndex">WORDLE</h1>
-                <form>
-                    <label for="lang"></label>
-                    <select name="idioma" id="idioma">
-                        <option value="ca" selected>Català</option>
-                        <option value="en">English</option>
-                        <option value="es">Castellano</option>
-                    </select>
-                </form>
+                <div class="footer bg-dark">
+                    <a href="index.php?lang=ca"> <?php echo $lang['ca'] ?> </a> | <a href="index.php?lang=en"> <?php echo $lang['en'] ?></a> | <a href="index.php?lang=es"> <?php echo $lang['es'] ?> </a>
+                </div>
                 <div id="contInstruccions">
-                    <h3></h3>
-                    <p></p>
+                    <h3><?php echo $lang['h3']?></h3>
+                    <p><?php echo $lang['p']?></p>
                     <ul style="list-style:none;">
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li><?php echo $lang['li_1']?></li>
+                        <li><?php echo $lang['li_2']?></li>
+                        <li><?php echo $lang['li_3']?></li>
                     </ul>
                 </div>
-                <h4></h4>
-                
+                <h4><?php echo $lang['h4']?></h4>
                 <form method="POST" action="game.php">
-                    <input type="text" id="inpUsuari" name="inpUsuari" onkeyup="bloquejarBoton()" placeholder="Nom d'usuari" ><br>
-                    <input type="submit" disabled id="botoUsuari" value="JUGAR"/>
+                    <input type="text" id="inpUsuari" name="inpUsuari" onkeyup="bloquejarBoton()" placeholder="<?php echo $lang['placeholder']?>" ><br>
+                    <input type="submit" disabled id="botoUsuari" value="<?php echo $lang['bottonPlay']?>">
                 </form>
             </div>
         </div>

@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include "configuracion.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,7 +73,7 @@
                         <td><button onclick="addLetter('J')" id="J"class="boton_personalizado">J</button></td>
                         <td><button onclick="addLetter('K')" id="K"class="boton_personalizado">K</button></td>
                         <td><button onclick="addLetter('L')" id="L"class="boton_personalizado">L</button></td>
-                        <td><button onclick="addLetter('Ç')" id="Ç"class="boton_personalizado">Ç</button></td>
+                        <td><button onclick="addLetter('Ç')" id="Ç"class="boton_personalizado"><?php echo $lang['letra']?></button></td>
                     </tr>
                     <tr>
                         <td><button onclick="jumpLine()" id="enviar" class="boton_personalizado">ENVIAR</button></td>
