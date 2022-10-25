@@ -26,6 +26,7 @@
             <h1 id="titol">WORDLE</h1>
             <?php
                 echo "<p id='nameuser'>".$_SESSION['userName']."</p>";
+                echo "<p id='pointUser'>PUNTS: 0</p>";
             ?>
             <img src="wordleVictoria.gif" id="imgCentre">
             <h1 id="textFinalPartida">HAS GUANYAT!</h1>

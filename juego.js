@@ -1,6 +1,10 @@
 console.log(php_var);
 let userWord = "";
 let line = 1;
+const casellesFila = 5;
+let rowPoints = 0;
+// let points = 0;
+// let tries = 0;
 function addLetter(letter){
     flag=false;
 	for (i=line;i<7;i++){
@@ -63,11 +67,14 @@ function deleteLetter() {
 }
 
 function jumpLine() {
+    let points = document.forms["enviarForm"]["puntuacio"].value;
+    let tries = document.forms["enviarForm"]["intents"].value;
+
     //console.log("mickey");
     //console.log(document.getElementById('rw').value);
     //console.log("mouse");
     if(userWord.length==5){
-        checkWord(php_var);
+        checkWord(php_var, points, tries);
         line+=1;
         userWord="";
     }
@@ -81,10 +88,11 @@ function bloquejarBoton() {
     }
 }
 
-function checkWord(randWord) {
+function checkWord(randWord, points, tries) {
     //console.log(randWord)
-    posNonRep=0;
-    countGreen=0;
+    posNonRep = 0;
+    countGreen = 0;
+    rowPoints = 0;
     for(i=1;i<userWord.length+1;i++){
         let letterPosition = randWord.indexOf(userWord[i-1]);
         //console.log(letterPosition);
@@ -97,6 +105,7 @@ function checkWord(randWord) {
                 posNonRep+='' + i;
                 randWord = randWord.replace(randWord[letterPosition],"#");
                 countGreen+=1;
+                rowPoints+=((120-20*(line-1))/2)/casellesFila;
                 //console.log(randWord);
             }
         }    
@@ -115,14 +124,16 @@ function checkWord(randWord) {
             } else {
                 document.getElementById('' + line + i).style.background = "yellow";
                 randWord = randWord.replace(randWord[letterPosition],"#");
+                rowPoints+=((120-20*(line-1))/2)/(casellesFila*2);
                 //console.log(randWord);
             }  
         }  
     }
-
+    
     if(countGreen==5){
         //setTimeout(function() { alert("HAS GUANYAT"); }, 100);
         setTimeout(function(){document.location.href="./win.php";},500)
+        rowPoints = 120-20*(line-1);
         var nodes = document.getElementById("contInstruccions").getElementsByTagName('*');
         for(var i = 0; i < nodes.length; i++){
             nodes[i].disabled = true;
@@ -138,4 +149,19 @@ function checkWord(randWord) {
         }
         
     }
+
+    points = parseInt(points) + rowPoints;
+    tries = parseInt(tries) + 1;
+
+    document.getElementById("puntuacio").setAttribute("value", points);
+    document.getElementById("intents").setAttribute("value", tries);
+    document.getElementById("form").setAttribute("onsubmit", "return false");
+
+    alert("punts: "+points+", intents: "+tries)
+
 }
+
+// function phpForm() {
+//     let points = document.forms["enviarForm"]["puntuacio"].value;
+//     let tries = document.forms["enviarForm"]["intents"].value;
+// }

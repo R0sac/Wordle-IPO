@@ -27,12 +27,13 @@
             <?php
                 function getRandomLine($filename) { 
                     $lines = file($filename); 
-                    return strtoupper(substr($lines[array_rand($lines)],0,-2));
+                    return strtoupper(substr($lines[array_rand($lines)],0,-1)); //ARREGLAR -1 O -2
                 }
                 $randomWord = getRandomLine("catala_5.txt");
             ?>
             <h1 id="titol">WORDLE</h1>
             <?php
+                $points = $_GET['points'];
                 if(isset($_POST['inpUsuari']) == false){
                     $_SESSION['userName'] = $_SESSION['userName'];
                 }
@@ -40,7 +41,7 @@
                     $_SESSION['userName'] = $_POST['inpUsuari'];
                 }
                 echo "<p id='nameuser'>".$_SESSION['userName']."</p>";
-                echo "<p id='pointUser'>PUNTS: 0</p>";
+                echo "<p id='pointUser'>PUNTS: $points</p>";
                 $fila = 6;
                 $columna = 5;
                 echo "<table class='tablaLetras'>";
@@ -81,7 +82,12 @@
                         <td><button onclick="addLetter('Ç')" id="Ç"class="boton_personalizado">Ç</button></td>
                     </tr>
                     <tr>
-                        <td><button onclick="jumpLine()" id="enviar" class="boton_personalizado">ENVIAR</button></td>
+                        <form id="form" name="enviarForm" onsubmit="return true" method="post">
+                            <input type="text" type="hidden" id="puntuacio" name="puntuacio" value=0>
+                            <input type="text" type="hidden" id="intents" name="intents" value=0>
+                            <input type="submit" onclick="jumpLine()" id="enviar" value="ENVIAR">
+                        </form>
+                        <!-- <td><button onclick="jumpLine()" id="enviar" class="boton_personalizado">ENVIAR</button></td> -->
                         <td><button onclick="addLetter('Z')" id="Z" class="boton_personalizado">Z</button></td>
                         <td><button onclick="addLetter('X')" id="X" class="boton_personalizado">X</button></td>
                         <td><button onclick="addLetter('C')" id="C" class="boton_personalizado">C</button></td>
@@ -98,6 +104,7 @@
     <script>
         <?php
             echo "var php_var = '$randomWord';"; 
+            echo "var points = '$points';"; 
         ?>
     </script>
     <script src="./juego.js"></script>
