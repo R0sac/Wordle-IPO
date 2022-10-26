@@ -2,17 +2,27 @@ html, body {
     height: 99%;
     background-color: #683611;
     color: #683611;
-    
+
 }
 noscript{
-    color: red;
+    background-color: #683611;
+    color: #F6E8B8;
+    width: 40%;
     text-align: center;
+    height: 30%;
+    margin: 0% 30%;
+    padding: 3px;
+    bottom: 38%;
+    border-radius: 10px;
+    z-index: 2;
+    overflow: hidden;
     font-family: Arial;
+    font-size: 15.7px;
+    position: fixed; 
 }
 noscript a{
     color: white;
 }
-
 #contPrincipal{
     background-color: #F6E8B8;
     height: 99%;
@@ -25,8 +35,8 @@ noscript a{
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    
 }
-
 #contDreta{
     width: 20%;
     height: 100%;
@@ -258,17 +268,17 @@ form{
 
     /*Colocar imagen backgound*/
     background: url(color.png) repeat-y;
-    -webkit-background-clip: text;
+    background-clip: text;
     background-clip: text;
     
 
     /*Animar imagen backgound*/
     -webkit-text-fill-color: transparent;
-    -webkit-animation: perder 80s linear infinite;
+    animation: perder 80s linear infinite;
     
     /*Activar aceleracion de hardware*/
-    -webkit-transform: translate3d(0,0,0);
-	-webkit-backface-visibility: hidden;
+    transform: translate3d(0,0,0);
+	backface-visibility: hidden;
 }
 
 .bordeGanarParitda{
@@ -277,7 +287,7 @@ form{
     border-radius: 30px;
 }
 
-@-webkit-keyframes perder {
+@keyframes perder {
 	0% { background-position: 0% 50%; }
 	100% { background-position: 100% 50%; }
 }
