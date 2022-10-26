@@ -11,7 +11,8 @@
        "h4" => "Enter a username:",
        "placeholder" => "Username",
        "bottonPlay" => "Play",
-       "letra" => "Ñ",
+       "letra" => "Ñ"
+       "borrar" => "delete",
        "es" => "Castellano",
        "en" => "English",
        "ca" => "Català"

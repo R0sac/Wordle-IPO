@@ -12,6 +12,7 @@
             "placeholder" => "Nombre de usuario",
             "bottonPlay" => "Jugar",
             "letra" => "Ñ",
+            "borrar" => "borrar",
             "es" => "Castellano",
             "en" => "English",
             "ca" => "Català"

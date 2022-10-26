@@ -84,7 +84,7 @@
                         <td><button onclick="addLetter('B')" id="B" class="boton_personalizado">B</button></td>
                         <td><button onclick="addLetter('N')" id="N" class="boton_personalizado">N</button></td>
                         <td><button onclick="addLetter('M')" id="M" class="boton_personalizado">M</button></td>
-                        <td colspan="2"><button onclick="deleteLetter()" id="borrar" class="boton_personalizado">BORRAR</button></td>
+                        <td colspan="2"><button onclick="deleteLetter()" id="borrar" class="boton_personalizado"><?php echo $lang['borrar']?></button></td>
                     </tr>
                 </table>
             </div>
