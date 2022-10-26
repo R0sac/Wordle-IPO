@@ -5,11 +5,12 @@ include "configuracion.php"
 <html lang="es">
     <head>
         <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="shortcut icon" href="https://www.nytimes.com/games-assets/v2/metadata/wordle-favicon.ico?v=v2210261020"/>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="juego.js"></script>
-        <title>Benvingut a Wordle</title>
+        <title>WORDLE</title>
     </head>
     <body>
         <div id="contPrincipal">
