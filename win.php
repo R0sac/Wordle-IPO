@@ -27,6 +27,8 @@
             <?php
                 echo "<p id='nameuser'>".$_SESSION['userName']."</p>";
                 echo "<p id='pointUser'>PUNTS: 0</p>";
+                echo "<p id='exUser'>EXITOSES: 0</p>";
+                echo "<p id='fallUser'>FALLIDES: 0</p>";
                 echo "<p id='triesUser'>INTENTS: 0</p>";
             ?>
             <div class="bordeFinalParitda">
