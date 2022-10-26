@@ -13,6 +13,7 @@ include "configuracion.php"
         <title>WORDLE</title>
     </head>
     <body>
+
         <div id="contPrincipal">
             <div id="contDreta">
                 <img src="wordleBanner.png" id="imgDreta">
@@ -23,8 +24,8 @@ include "configuracion.php"
             <div id="contCentre">
                 <p id="benvingut"><?php echo $lang['wellcome']?></p>
                 <h1 id="titolIndex">WORDLE</h1>
-                <div class="footer bg-dark">
-                    <a href="index.php?lang=ca"> <?php echo $lang['ca'] ?> </a> | <a href="index.php?lang=en"> <?php echo $lang['en'] ?></a> | <a href="index.php?lang=es"> <?php echo $lang['es'] ?> </a>
+                <div class="divBoton">
+                    <button id="botonIdioma"><a href="index.php?lang=ca"> <?php echo $lang['ca'] ?> </a></button> | <button id="botonIdioma"><a href="index.php?lang=en"> <?php echo $lang['en'] ?> </a></button> | <button id="botonIdioma"><a href="index.php?lang=es"> <?php echo $lang['es'] ?> </a></button> 
                 </div>
                 <div id="contInstruccions">
                     <h3><?php echo $lang['h3']?></h3>
