@@ -10,9 +10,13 @@
        "li_3" => "<span style='color:grey'><b>GREY</b></span> means that the letter <span style='color:grey'><b>NO</b></span> it's in the word",
        "h4" => "Enter a username:",
        "placeholder" => "Username",
+       "home" => "Home",
        "bottonPlay" => "Play",
-       "letra" => "Ñ"
-       "borrar" => "delete",
+       "letra" => "Ñ",
+       "borrar" => "Delete",
+       "enviar" => "SEND",
+       "ganar" => "YOU WIN!",
+       "perder" => "YOU LOSE!",
        "es" => "Castellano",
        "en" => "English",
        "ca" => "Català"

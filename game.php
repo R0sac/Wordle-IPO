@@ -22,8 +22,8 @@
         </div>
         <div id="contCentre">
             <div id="contHeader">
-                <button onclick="document.location.href='./index.php';">HOME</button>
-                <button onclick="document.location.href='./game.php';">JUGAR</button>
+                <button onclick="document.location.href='./index.php';"><?php echo $lang['home']?></button>
+                <button onclick="document.location.href='./game.php';"><?php echo $lang['bottonPlay']?></button>
             </div>
             <?php
                 function getRandomLine($filename) { 
@@ -73,10 +73,10 @@
                         <td><button onclick="addLetter('J')" id="J"class="boton_personalizado">J</button></td>
                         <td><button onclick="addLetter('K')" id="K"class="boton_personalizado">K</button></td>
                         <td><button onclick="addLetter('L')" id="L"class="boton_personalizado">L</button></td>
-                        <td><button onclick="addLetter('Ç')" id="Ç"class="boton_personalizado"><?php echo $lang['letra']?></button></td>
+                        <td><button onclick="addLetter('<?php echo $lang['letra']?>')" id="Ç"class="boton_personalizado"><?php echo $lang['letra']?></button></td>
                     </tr>
                     <tr>
-                        <td><button onclick="jumpLine()" id="enviar" class="boton_personalizado">ENVIAR</button></td>
+                        <td><button onclick="jumpLine()" id="enviar" class="boton_personalizado"><?php echo $lang['enviar']?></button></td>
                         <td><button onclick="addLetter('Z')" id="Z" class="boton_personalizado">Z</button></td>
                         <td><button onclick="addLetter('X')" id="X" class="boton_personalizado">X</button></td>
                         <td><button onclick="addLetter('C')" id="C" class="boton_personalizado">C</button></td>
