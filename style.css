@@ -317,7 +317,7 @@ form{
 }
 
 #textFinalPartida{
-    font-size: 80px;
+    font-size: 75px;
     font-family: Arial;
     text-shadow: 0 0 80px rgba(236, 236, 236, 0.897);
     letter-spacing: 0;
@@ -351,7 +351,7 @@ form{
 }
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 800px){
     #titolIndex{
         font-size: 50px;
     }
@@ -457,7 +457,7 @@ form{
 }
 
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 375px){
     #contPrincipal{
         width: 100%;
     }
