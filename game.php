@@ -46,7 +46,7 @@
                     $lines = file($filename); 
                     return strtoupper(substr($lines[array_rand($lines)],0,-2)); //ARREGLAR -1 O -2
                 }
-                $randomWord = getRandomLine("catala_5.txt");
+                    $randomWord = getRandomLine("catala_5.txt");
             ?>
             <h1 id="titol">WORDLE</h1>
             <?php
@@ -71,7 +71,6 @@
                 }
                 echo "</table>";
             ?>
-            
             <div id="contTeclat">
                 <div id="teclatFila1">
                     <button onclick="addLetter('Q')" id="Q" class="boton_personalizado">Q</button>
