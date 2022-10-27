@@ -1,10 +1,14 @@
-console.log(php_var);
+//console.log(php_var);
 let userWord = "";
 let line = 1;
 const casellesFila = 5;
 let rowPoints = 0;
 // let points = 0;
 // let tries = 0;
+//document.getElementById("pointUser").innerHTML = "PUNTS: "+points;
+wins = 0;
+loses = 0;
+tries = 0;
 function addLetter(letter){
     flag=false;
 	for (i=line;i<7;i++){
@@ -18,7 +22,7 @@ function addLetter(letter){
                     document.getElementById('' + i + j).innerHTML=letter;
                     document.getElementById('' + i + j).value=letter;
                     userWord+=letter;
-                    console.log(userWord);
+                    //console.log(userWord);
                     flag=true;
                     break
                 }
@@ -77,6 +81,7 @@ function jumpLine() {
         checkWord(php_var, points, tries);
         line+=1;
         userWord="";
+        soundBadWord();
     }
 }
 
@@ -134,7 +139,8 @@ function checkWord(randWord, points, tries) {
         //setTimeout(function() { alert("HAS GUANYAT"); }, 100);
         setTimeout(function(){document.location.href="./win.php";},500)
         rowPoints = 120-20*(line-1);
-        var nodes = document.getElementById("contInstruccions").getElementsByTagName('*');
+        wins = parseInt(wins) + 1;
+        var nodes = document.getElementById("contTeclat").getElementsByTagName('*');
         for(var i = 0; i < nodes.length; i++){
             nodes[i].disabled = true;
         }
@@ -143,7 +149,8 @@ function checkWord(randWord, points, tries) {
     } else if(line==6){
         //setTimeout(function() { alert("HAS PERDUT"); }, 100);
         setTimeout(function(){document.location.href="./lose.php";},500)
-        var nodes = document.getElementById("contInstruccions").getElementsByTagName('*');
+        loses = parseInt(loses) + 1;
+        var nodes = document.getElementById("contTeclat").getElementsByTagName('*');
         for(var i = 0; i < nodes.length; i++){
             nodes[i].disabled = true;
         }
@@ -154,14 +161,28 @@ function checkWord(randWord, points, tries) {
     tries = parseInt(tries) + 1;
 
     document.getElementById("puntuacio").setAttribute("value", points);
+    document.getElementById("pointUser").innerHTML = "PUNTS: "+points;
     document.getElementById("intents").setAttribute("value", tries);
+    document.getElementById("victories").setAttribute("value", wins);
+    document.getElementById("derrotes").setAttribute("value", loses);
     document.getElementById("form").setAttribute("onsubmit", "return false");
 
-    alert("punts: "+points+", intents: "+tries)
+    //alert("punts: "+points+", intents: "+tries+", victories: "+wins+", derrotes: "+loses)
 
 }
 
-// function phpForm() {
-//     let points = document.forms["enviarForm"]["puntuacio"].value;
-//     let tries = document.forms["enviarForm"]["intents"].value;
-// }
+function soundBadWord(){
+	var sonido = document.createElement("iframe");
+	sonido.setAttribute("src","bad_word.mp3");
+	document.body.appendChild(sonido);
+}
+function soundYouLose(){
+	var sonido = document.createElement("iframe");
+	sonido.setAttribute("src","lose.mp3");
+	document.body.appendChild(sonido);
+}
+function soundYouWin(){
+	var sonido = document.createElement("iframe");
+	sonido.setAttribute("src","win.mp3");
+	document.body.appendChild(sonido);
+}

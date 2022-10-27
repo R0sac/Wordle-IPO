@@ -57,7 +57,27 @@ html, body {
     overflow: hidden;
 }
 
-#contDreta img#imgDreta{
+#contDreta img#imgDretaBenv{
+    transform: rotate(90deg);
+    height:auto;
+    width: 1474px;
+    float: right;
+    position: absolute;
+    right: -800px;
+    top: 200px;
+    z-index: 0;
+}
+#contDreta img#imgDretaJugar{
+    transform: rotate(90deg);
+    height:auto;
+    width: 1474px;
+    float: right;
+    position: absolute;
+    right: -800px;
+    top: 200px;
+    z-index: 0;
+}
+#contDreta img#imgDretaFinal{
     transform: rotate(90deg);
     height:auto;
     width: 1474px;
@@ -77,7 +97,27 @@ html, body {
     overflow: hidden;
 }
 
-#contEsquerra img#imgEsquerra{
+#contEsquerra img#imgEsquerraBenv{
+    transform: rotate(90deg);
+    height:auto;
+    width: 1474px;
+    float: left;
+    position: absolute;
+    left: -800px;
+    top: 250px;
+    z-index: 0;
+}
+#contEsquerra img#imgEsquerraJugar{
+    transform: rotate(90deg);
+    height:auto;
+    width: 1474px;
+    float: left;
+    position: absolute;
+    left: -800px;
+    top: 250px;
+    z-index: 0;
+}
+#contEsquerra img#imgEsquerraFinal{
     transform: rotate(90deg);
     height:auto;
     width: 1474px;
@@ -134,6 +174,7 @@ html, body {
     font-weight: bold;
     float: left;
     margin-left: 25%;
+    margin-bottom: 5px;
 }
 
 #pointUser{
@@ -142,6 +183,32 @@ html, body {
     font-weight: bold;
     float: right;
     margin-right: 25%;
+    margin-bottom: 5px;
+}
+
+#exUser {
+    font-size: 22px;
+    font-family: Arial;
+    font-weight: bold;
+    float: left;
+    margin-left: 12%;
+    margin-top: 0px;
+}
+#fallUser {
+    font-size: 22px;
+    font-family: Arial;
+    font-weight: bold;
+    float: right;
+    margin-right: 20%;
+    margin-top: 0px;
+}
+#triesUser{
+    font-size: 22px;
+    font-family: Arial;
+    font-weight: bold;
+    float: right;
+    margin-right: 40%;
+    margin-top: 0px;
 }
 
 .tablaLetras{
@@ -161,17 +228,22 @@ html, body {
     border-radius: 10px;
     overflow: hidden;
 }
-.tablaTeclado{
-    border-spacing: 10px;
-    width: 90%;
-    margin: 0 0%;
-    height: 40%;
-    border: 3px solid #683611;
+#teclatFila1{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-.tablaTeclado td{
-    text-align: center;
-    width: 10%;
+#teclatFila2{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
+#teclatFila3{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .tablaLetras td{
     border: 3px solid #683611;
     text-align: center;
@@ -192,8 +264,26 @@ html, body {
     background-color: #F6E8B8;
     border-radius: 6px;
     border: 2px solid #683611;
+    width: 9%;
+    height: 100%;
   }
 .boton_personalizado:hover{
+    opacity: 60%;
+    text-decoration: none;
+}
+
+.boton_personalizado_accio{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 17px;
+    color: #683611;
+    background-color: #F6E8B8;
+    border-radius: 6px;
+    border: 2px solid #683611;
+    width: 15%;
+  }
+.boton_personalizado_accio:hover{
     opacity: 60%;
     text-decoration: none;
 }
@@ -254,5 +344,328 @@ form{
 }
 
 #textFinalPartida{
-    font-size: 50px;
+    font-size: 75px;
+    font-family: Arial;
+    text-shadow: 0 0 80px rgba(236, 236, 236, 0.897);
+    letter-spacing: 0;
+    display: block;
+
+    /*Colocar imagen backgound*/
+    background: url(imagen-animacion.png) repeat-y;
+    background-clip: text;
+    background-clip: text;
+    
+
+    /*Animar imagen backgound*/
+    -webkit-text-fill-color: transparent;
+    animation: resultado 80s linear infinite;
+    
+    /*Activar aceleracion de hardware*/
+    transform: translate3d(0,0,0);
+	backface-visibility: hidden;
+}
+
+.bordeFinalParitda{
+    border: 4px double #96581C;
+    margin-top: 30%;
+    margin-bottom: 27.25%;
+    border-radius: 30px;
+}
+
+@keyframes resultado {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
+}
+
+
+@media only screen and (max-width: 800px){
+    #titolIndex{
+        font-size: 50px;
+    }
+    #titol{
+        font-size: 50px;
+        margin-top: 0px;
+        margin-bottom: -15px;
+    }
+
+    #contInstruccions{
+        height: 45%;
+        overflow: scroll;
+    }
+    #contInstruccions li{
+        margin-left: -40px;
+    }
+
+    #contDreta img#imgDretaBenv{
+        width: 783px;
+        right: -444px;
+        top: 100px;
+    }
+    #contEsquerra img#imgEsquerraBenv{
+        width: 783px;
+        left: -444px;
+        top: 130px;
+    }
+
+    #contDreta img#imgDretaJugar{
+        width: 517px;
+        right: -248px;
+        top: 67px;
+    }
+    #contEsquerra img#imgEsquerraJugar{
+        width: 512px;
+        left: -248px;
+        top: 85px;
+    }
+
+    #contDreta img#imgDretaFinal{
+        width: 517px;
+        right: -248px;
+        top: 67px;
+    }
+    #contEsquerra img#imgEsquerraFinal{
+        width: 512px;
+        left: -248px;
+        top: 85px;
+    }
+
+    #contHeader{
+        height: 4%;
+    }
+    #contHeader button{
+        width: 28%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    #nameuser{
+        font-size: 15px;
+        margin-left: 6%;
+    }
+    #pointUser{
+        font-size: 15px;
+        margin-right: 6%;
+    }
+    #exUser {
+        top: 36px;
+        font-size: 15px;
+        margin-left: -38px;
+        position: relative;
+    }
+    #fallUser {
+        top: 36px;
+        font-size: 15px;
+        margin-right: -69px;
+        position: relative;
+    }
+    #triesUser{
+        font-size: 15px;
+        margin-right: 35%;
+        margin-bottom: 0px;
+        top: 35px;
+        position: relative;
+    }
+
+    #contCentre{
+        overflow: visible;
+    }
+
+    #contTeclat{
+        width: 245%;
+        height: 31%;
+        padding: 0px;
+        left: -182px;
+        top: -18px;
+        position: relative;
+    }
+
+    .tablaLetras {
+        width: 280px;
+        height: 50%;
+        position: relative;
+        left: -39px;
+    }
+    .tablaLetras td{
+        width: 35px;
+        height: 30px;
+        font-size: 20px;
+    }
+
+    #textFinalPartida{
+        font-size: 30px;
+    }
+    .bordeFinalParitda{
+        margin-top: 50%;
+        margin-bottom: 54%;
+    }
+}
+
+
+@media only screen and (max-width: 375px){
+    #contPrincipal{
+        width: 100%;
+    }
+
+    #benvingut{
+        font-size: 12px;
+    }
+    #titolIndex{
+        font-size: 30px;
+    }
+    #titol{
+        position: relative;
+        top: -54px;
+        height: 60px;
+    }
+
+    #contDreta{
+        width: 100%;
+        height: 10%;
+    }
+    #contEsquerra{
+        width: 100%;
+        height: 10%;
+        top: 518px;
+    }
+    #contCentre{
+        width: 100%;
+        height: 90%;
+        top: -43px;
+        position: relative;
+    }
+
+    #contDreta img#imgDretaBenv{
+        transform: rotate(0deg);
+        top: -144px;
+        width: 473px;
+        left: -64px;
+    }
+    #contEsquerra img#imgEsquerraBenv{
+        transform: rotate(0deg);
+        top: 0px;
+        width: 487px;
+        left: -55px;
+    }
+    #contDreta img#imgDretaJugar{
+        visibility: hidden;
+    }
+    #contEsquerra img#imgEsquerraJugar{
+        visibility: hidden;
+    }
+    #contDreta img#imgDretaFinal{
+        display: none;
+    }
+    #contEsquerra img#imgEsquerraFinal{
+        transform: rotate(0deg);
+        top: -129px;
+        width: 431px;
+        left: -77px;
+    }
+
+    #contHeader {
+        height: 4%;
+        top: -78px;
+        position: relative;
+    }
+
+    #nameuser {
+        top: -20px;
+        left: 50px;
+        position: relative;
+    }
+    #pointUser {
+        top: -20px;
+        left: -50px;
+        position: relative;
+    }
+    #exUser {
+        top: 12px;
+        margin-left: 13px;
+    }
+    #fallUser {
+        top: 12px;
+        margin-right: -19px;
+    }
+    #triesUser{
+        top: 12px;
+        left: 72px;
+        position: relative;
+    }
+
+    .tablaLetras{
+        left: 0px;
+        top: -16px;
+    }
+
+    #contTeclat{
+        height: 24%;
+    }
+
+    #contEsquerra img#imgEsquerraFinal {
+        top: -142px;
+        width: 475px;
+        left: -62px;
+    }
+
+    #teclatFila1 {
+        position: relative;
+        left: -76px;
+    }
+    #teclatFila2 {
+        position: relative;
+        left: -76px;
+    }
+    #teclatFila3 {
+        position: relative;
+        left: -76px;
+    }
+    .boton_personalizado {
+        padding: 6px;
+        font-size: 14px;
+        width: 3.6%;
+    }
+    .boton_personalizado_accio {
+        padding-top: 10px;
+        padding-bottom: 8px;
+        padding-left: 3px;
+        font-size: 10px;
+        width: 6%;
+    }
+
+    .bordeFinalParitda {
+        margin-bottom: 38%;
+    }
+}
+
+#botonIdioma{
+    background-color: #F6E8B8;
+    font-size: 100%;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+button a{
+    color: #683611;
+    text-decoration: none;
+}
+
+noscript{
+    background-color: #683611;
+    color: #F6E8B8;
+    width: 40%;
+    text-align: center;
+    height: 30%;
+    margin: 0% 30%;
+    padding: 3px;
+    bottom: 38%;
+    border-radius: 10px;
+    z-index: 2;
+    overflow: hidden;
+    font-family: Arial;
+    font-size: 15.7px;
+    position: fixed; 
+}
+
+noscript a{
+    color: white;
 }
