@@ -13,7 +13,7 @@
     <script src="./juego.js"></script>
     <title>Wordle</title>
 </head>
-<body onload="soundYouLose()">
+<body onload="soundYouWin()">
     <noscript>
             <div class=".noscript">
                 <h1>Javascript NO ESTÀ ACTIVAT</h1>

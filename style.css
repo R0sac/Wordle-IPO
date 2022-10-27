@@ -352,17 +352,22 @@ form{
 
     /*Colocar imagen backgound*/
     background: url(imagen-animacion.png) repeat-y;
-    background-clip: text;
+    -webkit-background-clip: text;
     background-clip: text;
     
 
     /*Animar imagen backgound*/
     -webkit-text-fill-color: transparent;
-    animation: resultado 80s linear infinite;
+    -webkit-animation: resultado 80s linear infinite;
     
     /*Activar aceleracion de hardware*/
-    transform: translate3d(0,0,0);
-	backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
+	-webkit-backface-visibility: hidden;
+}
+
+@-webkit-keyframes resultado {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
 }
 
 .bordeFinalParitda{
@@ -371,12 +376,6 @@ form{
     margin-bottom: 27.25%;
     border-radius: 30px;
 }
-
-@keyframes resultado {
-	0% { background-position: 0% 50%; }
-	100% { background-position: 100% 50%; }
-}
-
 
 @media only screen and (max-width: 800px){
     #titolIndex{
