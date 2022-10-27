@@ -2,6 +2,8 @@ html, body {
     height: 99%;
     background-color: #683611;
     color: #683611;
+    overflow-x:hidden;
+    overflow-y:hidden;
 }
 #contPrincipal{
     background-color: #F6E8B8;

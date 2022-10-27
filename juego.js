@@ -172,17 +172,17 @@ function checkWord(randWord, points, tries) {
 }
 
 function soundBadWord(){
-	var sonido = document.createElement("iframe").style.display = 'none';
+	var sonido = document.createElement("iframe");
 	sonido.setAttribute("src","bad_word.mp3");
 	document.body.appendChild(sonido);
 }
 function soundYouLose(){
-	var sonido = document.createElement("iframe").style.display = 'none';
+	var sonido = document.createElement("iframe");
 	sonido.setAttribute("src","lose.mp3");
 	document.body.appendChild(sonido);
 }
 function soundYouWin(){
-	var sonido = document.createElement("iframe").style.display = 'none';
+	var sonido = document.createElement("iframe");
 	sonido.setAttribute("src","win.mp3");
 	document.body.appendChild(sonido);
 }
