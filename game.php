@@ -103,7 +103,7 @@
                         <input type="hidden" id="intents" name="intents" value=0>
                         <input type="hidden" id="victories" name="victories" value=0>
                         <input type="hidden" id="derrotes" name="derrotes" value=0>
-                        <input type="submit" onclick="jumpLine()" id="enviar" class="boton_personalizado_accio" value="<?php echo $lang['enviar']?>">
+                        <input type="submit" onclick="jumpLine()" id="enviar" class="boton_personalizado_accio1" value="<?php echo $lang['enviar']?>">
                     </form>
                     <button onclick="addLetter('Z')" id="Z" class="boton_personalizado">Z</button>
                     <button onclick="addLetter('X')" id="X" class="boton_personalizado">X</button>
