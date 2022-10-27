@@ -9,11 +9,11 @@
     <link rel="shortcut icon" href="https://www.nytimes.com/games-assets/v2/metadata/wordle-favicon.ico?v=v2210261020%22/%3E">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./juego.js"></script>
     <title>Wordle</title>
 </head>
-<body>
+<body onload="soundYouWin()">
     <noscript>
             <div class=".noscript">
                 <h1>Javascript NO ESTÀ ACTIVAT</h1>
@@ -29,48 +29,29 @@
                 </div>
             </div>
     </noscript>
-    <main id="contPrincipal">
+    <div id="contPrincipal">
         <div id="contDreta">
-            <img src="wordleBanner.png" id="imgDretaJugar">
+            <img src="wordleBanner.png" id="imgDretaFinal">
         </div>
         <div id="contEsquerra">
-            <img src="wordleBanner.png" id="imgEsquerraJugar">
+            <img src="wordleBanner.png" id="imgEsquerraFinal">
         </div>
         <div id="contCentre">
             <div id="contHeader">
                 <button onclick="document.location.href='./index.php';"><?php echo $lang['home']?></button>
                 <button onclick="document.location.href='./game.php';"><?php echo $lang['bottonPlay']?></button>
             </div>
-            <?php
-                function getRandomLine($filename) { 
-                    $lines = file($filename); 
-                    return strtoupper(substr($lines[array_rand($lines)],0,-2)); //ARREGLAR -1 O -2
-                }
-                    $randomWord = getRandomLine("catala_5.txt");
-            ?>
             <h1 id="titol">WORDLE</h1>
             <?php
-                //$points = $_GET['points'];
-                if(isset($_POST['inpUsuari']) == false){
-                    $_SESSION['userName'] = $_SESSION['userName'];
-                }
-                else{
-                    $_SESSION['userName'] = $_POST['inpUsuari'];
-                }
                 echo "<p id='nameuser'>".$_SESSION['userName']."</p>";
                 echo "<p id='pointUser'>".$lang['puntos']."</p>";
-                $fila = 6;
-                $columna = 5;
-                echo "<table class='tablaLetras'>";
-                for ($i=1; $i <= $fila; $i++) {
-                    echo "<tr>";
-                    for ($j=1; $j <= $columna; $j++) { 
-                        echo "<td id=$i$j></td>";
-                    }
-                    echo "</tr>";
-                }
-                echo "</table>";
+                echo "<p id='exUser'>".$lang['exitoses']."</p>";
+                echo "<p id='fallUser'>".$lang['errors']."</p>";
+                echo "<p id='triesUser'>".$lang['intents']."</p>";
             ?>
+            <div class="bordeFinalParitda">
+                <h1 id="textFinalPartida"><?php echo $lang['ganar']?></h1>
+            </div>
             <div id="contTeclat">
                 <div id="teclatFila1">
                     <button onclick="addLetter('Q')" id="Q" class="boton_personalizado">Q</button>
@@ -97,13 +78,7 @@
                     <button onclick="addLetter('<?php echo $lang['letra']?>')" id="Ç"class="boton_personalizado"><?php echo $lang['letra']?></button>
                 </div>
                 <div id="teclatFila3">
-                    <form id="form" name="enviarForm" onsubmit="return true" method="post">
-                        <input type="hidden" id="puntuacio" name="puntuacio" value=0>
-                        <input type="hidden" id="intents" name="intents" value=0>
-                        <input type="hidden" id="victories" name="victories" value=0>
-                        <input type="hidden" id="derrotes" name="derrotes" value=0>
-                        <input type="submit" onclick="jumpLine()" id="enviar" class="boton_personalizado_accio1" value="<?php echo $lang['enviar']?>">
-                    </form>
+                    <button onclick="jumpLine()" id="enviar" class="boton_personalizado_accio"><?php echo $lang['enviar']?></button>
                     <button onclick="addLetter('Z')" id="Z" class="boton_personalizado">Z</button>
                     <button onclick="addLetter('X')" id="X" class="boton_personalizado">X</button>
                     <button onclick="addLetter('C')" id="C" class="boton_personalizado">C</button>
@@ -115,13 +90,6 @@
                 </div>
             </div>
         </div>
-    </main>
-    <script>
-        <?php
-            echo "var php_var = '$randomWord';"; 
-            //echo "var points = '$points';"; 
-        ?>
-    </script>
-    <script src="./juego.js"></script>
+    </div>
 </body>
 </html>
