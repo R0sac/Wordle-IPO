@@ -377,6 +377,39 @@ form{
     border-radius: 30px;
 }
 
+#botonIdioma{
+    background-color: #F6E8B8;
+    font-size: 100%;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+button a{
+    color: #683611;
+    text-decoration: none;
+}
+
+noscript{
+    background-color: #683611;
+    color: #F6E8B8;
+    width: 40%;
+    text-align: center;
+    height: 30%;
+    margin: 0% 30%;
+    padding: 3px;
+    bottom: 38%;
+    border-radius: 10px;
+    z-index: 2;
+    overflow: hidden;
+    font-family: Arial;
+    font-size: 15.7px;
+    position: fixed; 
+}
+
+noscript a{
+    color: white;
+}
+
 @media only screen and (max-width: 800px){
     #titolIndex{
         font-size: 50px;
@@ -636,35 +669,3 @@ form{
     }
 }
 
-#botonIdioma{
-    background-color: #F6E8B8;
-    font-size: 100%;
-    font-weight: bold;
-    border-radius: 10px;
-}
-
-button a{
-    color: #683611;
-    text-decoration: none;
-}
-
-noscript{
-    background-color: #683611;
-    color: #F6E8B8;
-    width: 40%;
-    text-align: center;
-    height: 30%;
-    margin: 0% 30%;
-    padding: 3px;
-    bottom: 38%;
-    border-radius: 10px;
-    z-index: 2;
-    overflow: hidden;
-    font-family: Arial;
-    font-size: 15.7px;
-    position: fixed; 
-}
-
-noscript a{
-    color: white;
-}

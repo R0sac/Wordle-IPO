@@ -17,6 +17,10 @@
        "enviar" => "SEND",
        "ganar" => "YOU WIN!",
        "perder" => "YOU LOSE!",
+       "puntos" => "POINTS: ",
+       "exitoses" => "SUCCESSFUL: ",
+       "errors" => "ERRORS: ",
+       "intents" => "ATTEMPTS: ",
        "es" => "Castellano",
        "en" => "English",
        "ca" => "Català"

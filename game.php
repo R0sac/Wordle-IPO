@@ -58,7 +58,7 @@
                     $_SESSION['userName'] = $_POST['inpUsuari'];
                 }
                 echo "<p id='nameuser'>".$_SESSION['userName']."</p>";
-                echo "<p id='pointUser'>PUNTS: </p>";
+                echo "<p id='pointUser'>".$lang['puntos']."</p>";
                 $fila = 6;
                 $columna = 5;
                 echo "<table class='tablaLetras'>";

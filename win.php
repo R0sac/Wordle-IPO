@@ -44,10 +44,10 @@
             <h1 id="titol">WORDLE</h1>
             <?php
                 echo "<p id='nameuser'>".$_SESSION['userName']."</p>";
-                echo "<p id='pointUser'>PUNTS: 0</p>";
-                echo "<p id='exUser'>EXITOSES: 0</p>";
-                echo "<p id='fallUser'>FALLIDES: 0</p>";
-                echo "<p id='triesUser'>INTENTS: 0</p>";
+                echo "<p id='pointUser'>".$lang['puntos']."</p>";
+                echo "<p id='exUser'>".$lang['exitoses']."</p>";
+                echo "<p id='fallUser'>".$lang['errors']."</p>";
+                echo "<p id='triesUser'>".$lang['intents']."</p>";
             ?>
             <div class="bordeFinalParitda">
                 <h1 id="textFinalPartida"><?php echo $lang['ganar']?></h1>
@@ -75,10 +75,10 @@
                     <button onclick="addLetter('J')" id="J"class="boton_personalizado">J</button>
                     <button onclick="addLetter('K')" id="K"class="boton_personalizado">K</button>
                     <button onclick="addLetter('L')" id="L"class="boton_personalizado">L</button>
-                    <button onclick="addLetter('Ç')" id="Ç"class="boton_personalizado">Ç</button>
+                    <button onclick="addLetter('<?php echo $lang['letra']?>')" id="Ç"class="boton_personalizado"><?php echo $lang['letra']?></button>
                 </div>
                 <div id="teclatFila3">
-                    <button onclick="jumpLine()" id="enviar" class="boton_personalizado_accio">ENVIAR</button>
+                    <button onclick="jumpLine()" id="enviar" class="boton_personalizado_accio"><?php echo $lang['enviar']?></button>
                     <button onclick="addLetter('Z')" id="Z" class="boton_personalizado">Z</button>
                     <button onclick="addLetter('X')" id="X" class="boton_personalizado">X</button>
                     <button onclick="addLetter('C')" id="C" class="boton_personalizado">C</button>
@@ -86,7 +86,7 @@
                     <button onclick="addLetter('B')" id="B" class="boton_personalizado">B</button>
                     <button onclick="addLetter('N')" id="N" class="boton_personalizado">N</button>
                     <button onclick="addLetter('M')" id="M" class="boton_personalizado">M</button>
-                    <button onclick="deleteLetter()" id="borrar" class="boton_personalizado_accio">BORRAR</button>
+                    <button onclick="deleteLetter()" id="borrar" class="boton_personalizado_accio"><?php echo $lang['borrar']?></button>
                 </div>
             </div>
         </div>
