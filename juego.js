@@ -67,9 +67,11 @@ function jumpLine() {
     //console.log(document.getElementById('rw').value);
     //console.log("mouse");
     if(userWord.length==5){
+        soundBadWord();
         checkWord(php_var);
         line+=1;
         userWord="";
+        
     }
 }
 
@@ -138,4 +140,26 @@ function checkWord(randWord) {
         }
         
     }
+}
+
+function soundBadWord(){
+	var sonido = document.createElement("iframe");
+	sonido.setAttribute("src","bad_word.mp3");
+    sonido.setAttribute("width", "0px");
+    sonido.setAttribute("height", "0px");
+	document.body.appendChild(sonido);
+}
+function soundYouLose(){
+	var sonido = document.createElement("iframe").style.display = 'none';
+	sonido.setAttribute("src","lose.mp3");
+    sonido.setAttribute("width", "0px");
+    sonido.setAttribute("height", "0px");
+	document.body.appendChild(sonido);
+}
+function soundYouWin(){
+	var sonido = document.createElement("iframe").style.display = 'none';
+	sonido.setAttribute("src","win.mp3");
+    sonido.setAttribute("width", "0px");
+    sonido.setAttribute("height", "0px");
+	document.body.appendChild(sonido);
 }

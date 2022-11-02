@@ -3,6 +3,16 @@ html, body {
     background-color: #683611;
     color: #683611;
 }
+audio{
+    display: none;
+    visibility: hidden;
+    width: 10px;
+}
+video{
+    display: none;
+    visibility: hidden;
+    width: 10px;
+}
 #contPrincipal{
     background-color: #F6E8B8;
     height: 99%;
