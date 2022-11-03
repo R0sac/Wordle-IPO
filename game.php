@@ -71,6 +71,7 @@
                 }
                 echo "</table>";
             ?>
+            <p><?php echo $randomWord ?></p>
             <div id="contTeclat">
                 <div id="teclatFila1">
                     <button onclick="addLetter('Q')" id="Q" class="boton_personalizado">Q</button>
