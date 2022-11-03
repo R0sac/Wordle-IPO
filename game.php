@@ -44,7 +44,7 @@
             <?php
                 function getRandomLine($filename) { 
                     $lines = file($filename); 
-                    return strtoupper(substr($lines[array_rand($lines)],0,-1)); //ARREGLAR -1 O -2
+                    return strtoupper(substr($lines[array_rand($lines)],0,-2)); //ARREGLAR -1 O -2
                 }
                     $randomWord = getRandomLine($lang['file']);
             ?>
@@ -71,7 +71,6 @@
                 }
                 echo "</table>";
             ?>
-            <p><?php echo $randomWord ?></p>
             <div id="contTeclat">
                 <div id="teclatFila1">
                     <button onclick="addLetter('Q')" id="Q" class="boton_personalizado">Q</button>
