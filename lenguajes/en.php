@@ -1,6 +1,6 @@
 <?php
        $lang = array(
-       "wellcome" => "Wellcome to",
+       "wellcome" => "Welcome to",
        "h3" => "INSTRUCTIONS", 
        "p" => "Anyone can play word of the day.<br>
               The objective is simple, to guess the hidden word. The word has 5 letters and you have 6 tries to guess it. The word is the same for all people on that day.<br>
