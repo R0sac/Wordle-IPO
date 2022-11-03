@@ -46,7 +46,7 @@
                     $lines = file($filename); 
                     return strtoupper(substr($lines[array_rand($lines)],0,-1)); //ARREGLAR -1 O -2
                 }
-                    $randomWord = getRandomLine("catala_5.txt");
+                    $randomWord = getRandomLine($lang['file']);
             ?>
             <h1 id="titol">WORDLE</h1>
             <?php

@@ -23,5 +23,7 @@
               "intents" => "INTENTS: ",
               "es" => "Castellano",
               "en" => "English",
-              "ca" => "Català"
+              "ca" => "Català",
+              "file" => "catala_5.txt"
+
        );

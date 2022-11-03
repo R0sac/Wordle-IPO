@@ -23,6 +23,6 @@
        "intents" => "ATTEMPTS: ",
        "es" => "Castellano",
        "en" => "English",
-       "ca" => "Català"
-
+       "ca" => "Català",
+       "file" => "english_5.txt"
 );
