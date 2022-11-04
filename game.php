@@ -1,10 +1,12 @@
 <?php
     session_start();
+    include "configuracion.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="shortcut icon" href="https://www.nytimes.com/games-assets/v2/metadata/wordle-favicon.ico?v=v2210261020%22/%3E">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=
@@ -12,6 +14,21 @@
     <title>Wordle</title>
 </head>
 <body>
+    <noscript>
+            <div class=".noscript">
+                <h1>Javascript NO ESTÀ ACTIVAT</h1>
+                <div class="deshabilitado">
+                    Javascript està deshabilitat al vostre navegador web.<br />
+                    Por favor, para ver correctamente este sitio,<br />
+                    <b><i>habiliti javascript</i></b>.<br />
+                    <br />
+                    Per veure les instruccions per habilitar javascript<br />
+                    al vostre navegador, feu click 
+                    <a href="https://support.google.com/adsense/answer/12654?hl=ca" 
+                    target="_blank">aquí</a>.
+                </div>
+            </div>
+    </noscript>
     <main id="contPrincipal">
         <div id="contDreta">
             <img src="wordleBanner.png" id="imgDretaJugar">
@@ -20,19 +37,21 @@
             <img src="wordleBanner.png" id="imgEsquerraJugar">
         </div>
         <div id="contCentre">
+            <button id="darkmode" onclick="toggleTheme()"></button>
             <div id="contHeader">
-                <button onclick="document.location.href='./index.php';">HOME</button>
-                <button onclick="document.location.href='./game.php';">JUGAR</button>
+                <button onclick="document.location.href='./index.php';"><?php echo $lang['home']?></button>
+                <button onclick="document.location.href='./game.php';"><?php echo $lang['bottonPlay']?></button>
             </div>
             <?php
                 function getRandomLine($filename) { 
                     $lines = file($filename); 
-                    return strtoupper(substr($lines[array_rand($lines)],0,-2));
+                    return strtoupper(substr($lines[array_rand($lines)],0,-1)); //ARREGLAR -1 O -2
                 }
-                $randomWord = getRandomLine("catala_5.txt");
+                    $randomWord = getRandomLine("catala_5.txt");
             ?>
             <h1 id="titol">WORDLE</h1>
             <?php
+                //$points = $_GET['points'];
                 if(isset($_POST['inpUsuari']) == false){
                     $_SESSION['userName'] = $_SESSION['userName'];
                 }
@@ -40,7 +59,7 @@
                     $_SESSION['userName'] = $_POST['inpUsuari'];
                 }
                 echo "<p id='nameuser'>".$_SESSION['userName']."</p>";
-                echo "<p id='pointUser'>PUNTS: 0</p>";
+                echo "<p id='pointUser'>".$lang['puntos']."</p>";
                 $fila = 6;
                 $columna = 5;
                 echo "<table class='tablaLetras'>";
@@ -53,7 +72,6 @@
                 }
                 echo "</table>";
             ?>
-            
             <div id="contTeclat">
                 <div id="teclatFila1">
                     <button onclick="addLetter('Q')" id="Q" class="boton_personalizado">Q</button>
@@ -77,10 +95,16 @@
                     <button onclick="addLetter('J')" id="J"class="boton_personalizado">J</button>
                     <button onclick="addLetter('K')" id="K"class="boton_personalizado">K</button>
                     <button onclick="addLetter('L')" id="L"class="boton_personalizado">L</button>
-                    <button onclick="addLetter('Ç')" id="Ç"class="boton_personalizado">Ç</button>
+                    <button onclick="addLetter('<?php echo $lang['letra']?>')" id="Ç"class="boton_personalizado"><?php echo $lang['letra']?></button>
                 </div>
                 <div id="teclatFila3">
-                    <button onclick="jumpLine()" id="enviar" class="boton_personalizado_accio">ENVIAR</button>
+                    <form id="form" name="enviarForm" onsubmit="return true" method="post">
+                        <input type="hidden" id="puntuacio" name="puntuacio" value=0>
+                        <input type="hidden" id="intents" name="intents" value=0>
+                        <input type="hidden" id="victories" name="victories" value=0>
+                        <input type="hidden" id="derrotes" name="derrotes" value=0>
+                        <input type="submit" onclick="jumpLine()" id="enviar" class="boton_personalizado_accio1" value="<?php echo $lang['enviar']?>">
+                    </form>
                     <button onclick="addLetter('Z')" id="Z" class="boton_personalizado">Z</button>
                     <button onclick="addLetter('X')" id="X" class="boton_personalizado">X</button>
                     <button onclick="addLetter('C')" id="C" class="boton_personalizado">C</button>
@@ -88,7 +112,7 @@
                     <button onclick="addLetter('B')" id="B" class="boton_personalizado">B</button>
                     <button onclick="addLetter('N')" id="N" class="boton_personalizado">N</button>
                     <button onclick="addLetter('M')" id="M" class="boton_personalizado">M</button>
-                    <button onclick="deleteLetter()" id="borrar" class="boton_personalizado_accio">BORRAR</button>
+                    <button onclick="deleteLetter()" id="borrar" class="boton_personalizado_accio"><?php echo $lang['borrar']?></button>
                 </div>
             </div>
         </div>
@@ -96,6 +120,7 @@
     <script>
         <?php
             echo "var php_var = '$randomWord';"; 
+            //echo "var points = '$points';"; 
         ?>
     </script>
     <script src="./juego.js"></script>
