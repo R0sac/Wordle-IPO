@@ -13,7 +13,7 @@
     , initial-scale=1.0">
     <title>Wordle</title>
 </head>
-<body>
+<body onload="inicio()">
     <noscript>
             <div class=".noscript">
                 <h1>Javascript NO ESTÀ ACTIVAT</h1>
@@ -71,6 +71,9 @@
                 }
                 echo "</table>";
             ?>
+            <div>
+                <p id="time">00:00</p>
+            </div>
             <div id="contTeclat">
                 <div id="teclatFila1">
                     <button onclick="addLetter('Q')" id="Q" class="boton_personalizado">Q</button>

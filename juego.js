@@ -9,6 +9,8 @@ let rowPoints = 0;
 wins = 0;
 loses = 0;
 tries = 0;
+let seg = 0;
+let min = 0;
 function addLetter(letter){
     flag=false;
 	for (i=line;i<7;i++){
@@ -186,3 +188,28 @@ function soundYouWin(){
 	sonido.setAttribute("src","win.mp3");
 	document.body.appendChild(sonido);
 }
+
+function inicio() {
+    control = setInterval(cronometro, 1000);
+    document.getElementsById("start").addEventListener("click",cronometrar);
+    cronometro();
+}
+
+function cronometro() {
+    seg += 1;
+  
+    if (seg == 60) {
+      seg = 0;
+      min += 1;
+    }
+  
+    if (seg < 10 && min < 10) {
+        document.getElementById('time').innerHTML = ("0" + min + ":" + "0" + seg);
+      } else if (seg >= 10 && min < 10) {
+        document.getElementById('time').innerHTML = ("0" + min + ":" + seg);
+      } else if (seg < 10 && min > 10) {
+        document.getElementById('time').innerHTML = (+min + ":" + "0" + seg);
+      } else {
+        document.getElementById('time').innerHTML = (min + ":" + seg);
+      }
+  }
