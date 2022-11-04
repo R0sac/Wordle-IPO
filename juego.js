@@ -186,4 +186,3 @@ function soundYouWin(){
 	sonido.setAttribute("src","win.mp3");
 	document.body.appendChild(sonido);
 }
-
