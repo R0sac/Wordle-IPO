@@ -13,7 +13,7 @@
     , initial-scale=1.0">
     <title>Wordle</title>
 </head>
-<body onload="inicio()">
+<body onload="inicioCronometro()">
     <noscript>
             <div class=".noscript">
                 <h1>Javascript NO ESTÀ ACTIVAT</h1>
@@ -44,7 +44,7 @@
             <?php
                 function getRandomLine($filename) { 
                     $lines = file($filename); 
-                    return strtoupper(substr($lines[array_rand($lines)],0,-2)); //ARREGLAR -1 O -2
+                    return strtoupper(substr($lines[array_rand($lines)],0,-1)); //ARREGLAR -1 O -2
                 }
                     $randomWord = getRandomLine($lang['file']);
             ?>
@@ -71,9 +71,14 @@
                 }
                 echo "</table>";
             ?>
-            <div>
+            <div id="time1">
+                <p id="time1">00:00</p>
+                <input type="button" class="boton" id="start" value="start &#9658;" onclick="inicioModoCrono();">
+            </div>
+            <div>       
                 <p id="time">00:00</p>
             </div>
+            <p><?php echo $randomWord ?></p>
             <div id="contTeclat">
                 <div id="teclatFila1">
                     <button onclick="addLetter('Q')" id="Q" class="boton_personalizado">Q</button>
@@ -100,7 +105,7 @@
                     <button onclick="addLetter('<?php echo $lang['letra']?>')" id="Ç"class="boton_personalizado"><?php echo $lang['letra']?></button>
                 </div>
                 <div id="teclatFila3">
-                    <form id="form" name="enviarForm" onsubmit="return true" method="post">
+                    <form id="form" name="enviarForm" onsubmit="return true" method="post" action="">
                         <input type="hidden" id="puntuacio" name="puntuacio" value=0>
                         <input type="hidden" id="intents" name="intents" value=0>
                         <input type="hidden" id="victories" name="victories" value=0>

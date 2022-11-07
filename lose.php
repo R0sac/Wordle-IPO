@@ -1,6 +1,18 @@
 <?php
     session_start();
-    include "configuracion.php"
+    include "configuracion.php";
+    $_SESSION['puntuacio'] += $_POST['puntuacio'];
+    $_SESSION['victories'] += $_POST['victories'];
+    $_SESSION['derrotes'] += $_POST['derrotes'];
+    if(isset($_SESSION["arrayPlayer"])){
+        $_SESSION["arrayPlayer"];
+    }
+    else{
+        $_SESSION["arrayPlayer"] = array();
+    }
+
+    $arrayPlayer = [$_SESSION['userName'],$_SESSION['puntuacio'],$_POST['intents'],$_SESSION['victories'],$_SESSION['derrotes']];
+    array_push($_SESSION["arrayPlayer"], $arrayPlayer);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +56,7 @@
             <h1 id="titol">WORDLE</h1>
             <?php
                 echo "<p id='nameuser'>".$_SESSION['userName']."</p>";
-                echo "<p id='pointUser'>".$lang['puntos']."</p>";
+                echo "<p id='pointUser'>".$lang['puntos'].$arrayPlayer[1]."</p>";
             ?>
             <div class="bordeFinalParitda">
                 <h1 id="textFinalPartida"><?php echo $lang['perder']?></h1>

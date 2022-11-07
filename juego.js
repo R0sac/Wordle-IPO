@@ -9,8 +9,11 @@ let rowPoints = 0;
 wins = 0;
 loses = 0;
 tries = 0;
-let seg = 0;
-let min = 0;
+seg = 0;
+min = 0;
+seg2 = 0;
+min2 = 2;
+cronoPoint = 0;
 function addLetter(letter){
     flag=false;
 	for (i=line;i<7;i++){
@@ -139,9 +142,35 @@ function checkWord(randWord, points, tries) {
     
     if(countGreen==5){
         //setTimeout(function() { alert("HAS GUANYAT"); }, 100);
-        setTimeout(function(){document.location.href="./win.php";},500)
         rowPoints = 120-20*(line-1);
         wins = parseInt(wins) + 1;
+        points = parseInt(points) + rowPoints;
+        tries = parseInt(tries) + 1;
+        if (min >= 0 && min <= 1 & seg <= 1) {
+           cronoPoint = cronoPoint + 50;
+        }else if (min >= 1 && min <= 2 && seg <= 1 ) {
+            cronoPoint = cronoPoint + 40;   
+        }else if (min >= 2 && seg >= 1 && min <= 3) {
+            cronoPoint = cronoPoint + 30;
+        }else if (min >= 3 && seg >= 1 && min <= 4) {
+            cronoPoint = cronoPoint + 20;
+        }else if (min >= 4 && seg >= 1 && min <= 5 && seg <= 1) {
+            cronoPoint = cronoPoint + 10;
+        }else{
+            cronoPoint;
+        }
+        finalPoints = cronoPoint + points;
+    
+        document.getElementById("puntuacio").setAttribute("value", finalPoints);
+        document.getElementById("pointUser").innerHTML = "PUNTS: "+finalPoints;
+        document.getElementById("intents").setAttribute("value", tries);
+        document.getElementById("victories").setAttribute("value", wins);
+        document.getElementById("derrotes").setAttribute("value", loses);
+        document.getElementById("form").setAttribute("action", "win.php");
+        // document.getElementById("form").setAttribute("onsubmit", "return false");
+        alert("punts: "+finalPoints+", intents: "+tries+", victories: "+wins+", derrotes: "+loses)
+        document.getElementById("form").submit();
+        //setTimeout(function(){document.location.href="./win.php";},500)
         var nodes = document.getElementById("contTeclat").getElementsByTagName('*');
         for(var i = 0; i < nodes.length; i++){
             nodes[i].disabled = true;
@@ -150,26 +179,37 @@ function checkWord(randWord, points, tries) {
         
     } else if(line==6){
         //setTimeout(function() { alert("HAS PERDUT"); }, 100);
-        setTimeout(function(){document.location.href="./lose.php";},500)
         loses = parseInt(loses) + 1;
+        points = parseInt(points) + rowPoints;
+        tries = parseInt(tries) + 1;
+        document.getElementById("puntuacio").setAttribute("value", points);
+        document.getElementById("pointUser").innerHTML = "PUNTS: "+points;
+        document.getElementById("intents").setAttribute("value", tries);
+        document.getElementById("victories").setAttribute("value", wins);
+        document.getElementById("derrotes").setAttribute("value", loses);
+        document.getElementById("form").setAttribute("action", "lose.php");
+        // document.getElementById("form").setAttribute("onsubmit", "return false");
+        alert("punts: "+points+", intents: "+tries+", victories: "+wins+", derrotes: "+loses)
+        document.getElementById("form").submit();
+        setTimeout(function(){document.location.href="./lose.php";},500)
         var nodes = document.getElementById("contTeclat").getElementsByTagName('*');
         for(var i = 0; i < nodes.length; i++){
             nodes[i].disabled = true;
         }
         
+    } else {
+        points = parseInt(points) + rowPoints;
+        tries = parseInt(tries) + 1;
+
+        document.getElementById("puntuacio").setAttribute("value", points);
+        document.getElementById("pointUser").innerHTML = "PUNTS: "+points;
+        document.getElementById("intents").setAttribute("value", tries);
+        document.getElementById("victories").setAttribute("value", wins);
+        document.getElementById("derrotes").setAttribute("value", loses);
+        document.getElementById("form").setAttribute("onsubmit", "return false");
+
+        alert("punts: "+points+", intents: "+tries+", victories: "+wins+", derrotes: "+loses)
     }
-
-    points = parseInt(points) + rowPoints;
-    tries = parseInt(tries) + 1;
-
-    document.getElementById("puntuacio").setAttribute("value", points);
-    document.getElementById("pointUser").innerHTML = "PUNTS: "+points;
-    document.getElementById("intents").setAttribute("value", tries);
-    document.getElementById("victories").setAttribute("value", wins);
-    document.getElementById("derrotes").setAttribute("value", loses);
-    document.getElementById("form").setAttribute("onsubmit", "return false");
-
-    //alert("punts: "+points+", intents: "+tries+", victories: "+wins+", derrotes: "+loses)
 
 }
 
@@ -189,17 +229,16 @@ function soundYouWin(){
 	document.body.appendChild(sonido);
 }
 
-function inicio() {
+function inicioCronometro() {
     control = setInterval(cronometro, 1000);
-    document.getElementsById("start").addEventListener("click",cronometrar);
-    cronometro();
+   
 }
 
 function cronometro() {
     seg += 1;
   
     if (seg == 60) {
-      seg = 0;
+        seg = 0;
       min += 1;
     }
   
@@ -211,5 +250,29 @@ function cronometro() {
         document.getElementById('time').innerHTML = (+min + ":" + "0" + seg);
       } else {
         document.getElementById('time').innerHTML = (min + ":" + seg);
+      }
+      
+  }
+
+  function inicioModoCrono() {
+    control = setInterval(modoCrono, 1000);
+    document.getElementById('start').value;
+}
+  function modoCrono() {
+    seg -= 1;
+  
+    if (seg == 60) {
+        seg = 0;
+      min -= 1;
+    }
+  
+    if (seg < 10 && min < 10) {
+        document.getElementById('time1').innerHTML = ("0" + min + ":" + "0" + seg);
+      } else if (seg >= 10 && min < 10) {
+        document.getElementById('time1').innerHTML = ("0" + min + ":" + seg);
+      } else if (seg < 10 && min > 10) {
+        document.getElementById('time1').innerHTML = (+min + ":" + "0" + seg);
+      } else {
+        document.getElementById('time1').innerHTML = (min + ":" + seg);
       }
   }
