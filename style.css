@@ -193,6 +193,58 @@ html, body {
     padding-top: 10px;
 }
 
+/*Botó de reset*/
+#resetID{
+    height: 5%;
+    width: 8%;
+    background-color: #683611;
+    color: #F6E8B8;
+    font-size: 100%;
+    font-weight: bold;
+    border-radius: 10px;
+    position: absolute;
+    left: 1100px;
+    top: 850px;
+}
+#resetID:hover{
+    opacity: 90%;
+    color: #F6E8B8;
+}
+.cancelButton, .resetButton {
+    float: left;
+    width: 25%;
+  }
+.cancelButton {
+    background-color: #888;
+    color: black;
+    margin-left: 25%;
+  }
+.resetButton {
+    background-color: #f44336;
+}
+.contReset {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 25%;
+    background-color: #683611;
+    margin-left: 25%;
+    margin-top: 15%;
+    border: 5px solid #000;
+    border-radius: 10px;
+}
+.contResetContent {
+    background-color: #F6E8B8;
+    border: 1px solid #000;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    margin-top: 2%;
+}
+
 #nameuser{
     font-size: 22px;
     font-family: Arial;
@@ -426,14 +478,153 @@ form{
 	-webkit-backface-visibility: hidden;
 }
 
+@media (prefers-color-scheme: dark){
+    body {
+        background-color: black;
+    }
+  
+    #darkmode{
+          background-color: black;
+          color: #F6E8B8;
+    }
+    #darkmode:hover{
+        opacity: 90%;
+        color: #683611;
+    }
+    #darkmode::after{
+        content: "Light Mode";
+        visibility: visible;
+    }
+
+    #resetID{
+        background-color: black;
+        color: #F6E8B8;
+    }
+    #resetID:hover{
+        opacity: 90%;
+        color: #683611;
+    }
+
+    .contReset{
+        background-color: black;
+        color: #F6E8B8;
+        border: 5px solid #F6E8B8;
+    }
+    .contResetContent{
+        background-color: #683611;
+    }
+
+    #contPrincipal {
+        background-color: #683611;
+        color: black;
+    }
+    #contInstruccions {
+        background-color: black;
+        color: #F6E8B8;
+    }
+    #inpUsuari {
+        background-color: black;
+        color: #F6E8B8;
+    }
+    #inpUsuari::placeholder{
+        color: #F6E8B8;
+    }
+    #botoUsuari{
+        background-color: black;
+        color: #F6E8B8;
+    }
+    #botoUsuari:hover{
+        background-color: #96581C;
+        color: #F6E8B8;
+        border: 5px solid #F6E8B8;
+    }
+    #contHeader{
+        background-color: #F6E8B8;
+        border: 2px solid #F6E8B8;
+    }
+    
+    #contHeader button{
+        background-color: #F6E8B8;
+        color: #683611;
+    }
+    
+    #contHeader button:hover{
+        background-color: #96581C;
+        color: #F6E8B8;
+        border: 1px solid #000;
+    }
+
+    .tablaLetras td{
+        border: 3px solid #F6E8B8;
+        background-color: black;
+        color: #F6E8B8;
+    }
+
+    #contTeclat{
+        background-color: #F6E8B8;
+        color: #683611;
+    }
+    .boton_personalizado{
+        color: #F6E8B8;
+        background-color: #683611;
+        border: 2px solid #F6E8B8;
+    }
+    .boton_personalizado:hover{
+        opacity: 90%;
+    }
+
+    .boton_personalizado_accio{
+        color: #F6E8B8;
+        background-color: #683611;
+        border: 2px solid #F6E8B8;
+    }
+    .boton_personalizado_accio:hover{
+        opacity: 90%;
+    }
+
+    .boton_personalizado_accio1{
+        color: #F6E8B8;
+        background-color: #683611;
+        border: 2px solid #F6E8B8;
+    }
+    .boton_personalizado_accio1:hover{
+        opacity: 90%;
+    }
+        
+    #textFinalPartida{
+        font-size: 75px;
+        font-family: Arial;
+        text-shadow: 0 0 80px rgba(236, 236, 236, 0.897);
+        letter-spacing: 0;
+        display: block;
+
+        /*Colocar imagen backgound*/
+        background: url(imagen-animacion-dark.png) repeat-y;
+        -webkit-background-clip: text;
+        background-clip: text;
+        
+
+        /*Animar imagen backgound*/
+        -webkit-text-fill-color: transparent;
+        -webkit-animation: resultado 80s linear infinite;
+        
+        /*Activar aceleracion de hardware*/
+        -webkit-transform: translate3d(0,0,0);
+        -webkit-backface-visibility: hidden;
+    }
+    .bordeFinalParitda{
+        border: 4px double #EEC76F;
+    }
+}
+
 @media not print {
     .dark body {
-      background-color: #F6E8B8;
+      background-color: black;
     }
 
     .dark #darkmode{
-        background-color: #F6E8B8;
-        color: #683611;
+        background-color: black;
+        color: #F6E8B8;
     }
     .dark #darkmode:hover{
         opacity: 90%;
@@ -444,24 +635,42 @@ form{
         visibility: visible;
     }
 
-    .dark #contPrincipal {
-        background-color: #683611;
+    .dark #resetID{
+        background-color: black;
         color: #F6E8B8;
     }
+    .dark #resetID:hover{
+        opacity: 90%;
+        color: #683611;
+    }
+
+    .dark .contReset{
+        background-color: black;
+        color: #F6E8B8;
+        border: 5px solid #F6E8B8;
+    }
+    .dark .contResetContent{
+        background-color: #683611;
+    }
+
+    .dark #contPrincipal {
+        background-color: #683611;
+        color: black;
+    }
     .dark #contInstruccions {
-    background-color: #F6E8B8;
-    color: #683611;
+        background-color: black;
+        color: #F6E8B8;
     }
     .dark #inpUsuari {
-        background-color: #F6E8B8;
-        color: #683611;
+        background-color: black;
+        color: #F6E8B8;
     }
     .dark #inpUsuari::placeholder{
-        color: #683611;
+        color: #F6E8B8;
     }
     .dark #botoUsuari{
-        background-color: #F6E8B8;
-        color: #683611;
+        background-color: black;
+        color: #F6E8B8;
     }
     .dark #botoUsuari:hover{
         background-color: #96581C;
@@ -487,6 +696,7 @@ form{
     .dark .tablaLetras td{
         border: 3px solid #F6E8B8;
         background-color: black;
+        color: #F6E8B8;
     }
 
     .dark #contTeclat{
@@ -593,7 +803,7 @@ noscript a{
     color: white;
 }
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 800px), only screen and (max-height: 600px){
     #titolIndex{
         font-size: 50px;
     }
@@ -601,6 +811,37 @@ noscript a{
         font-size: 50px;
         margin-top: 0px;
         margin-bottom: -15px;
+    }
+
+    #darkmode{
+        left: 140px;
+        width: 10%;
+        height: auto;
+    }
+    
+    #resetID{
+        left: 435px;
+        top: 566px;
+        width: 10%;
+        height: auto;
+        font-size: 11px;
+    }
+    .contReset {
+        width: 40%;
+        height: 30%;
+        margin-left: 30%;
+        margin-top: 30%;
+        font-size: 14px;
+    }
+    .contResetContent {
+        height: 90%;
+    }
+    .cancelButton, .resetButton {
+        float: left;
+        width: 30%;
+    }
+    .cancelButton {
+        margin-left: 20%;
     }
 
     #contInstruccions{
@@ -731,6 +972,33 @@ noscript a{
         position: relative;
         top: -54px;
         height: 60px;
+    }
+    #darkmode {
+        left: 7px;
+        top: 100px;
+        width: 15%;
+        height: auto;
+    }
+    #resetID {
+        left: 300px;
+        top: 590px;
+        width: 16%;
+        height: auto;
+        font-size: 11px;
+    }
+    .contReset {
+        width: 70%;
+        height: 25%;
+        margin-left: 15%;
+        margin-top: 60%;
+        font-size: 15px;
+    }
+    .cancelButton, .resetButton {
+        float: left;
+        width: 35%;
+    }
+    .cancelButton {
+        margin-left: 15%;
     }
 
     #contDreta{

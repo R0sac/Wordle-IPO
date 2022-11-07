@@ -87,9 +87,9 @@ function jumpLine() {
 
 function bloquejarBoton() {
     if(document.getElementById("inpUsuari").value==="") { 
-        document.getElementById('botoUsuari').disabled = true; 
+        document.getElementById('botoUsuari').disabled = true;
     } else { 
-           document.getElementById('botoUsuari').disabled = false;  
+           document.getElementById('botoUsuari').disabled = false;
     }
 }
 
@@ -187,13 +187,17 @@ function soundYouWin(){
 	document.body.appendChild(sonido);
 }
 
+function showReset() {
+    document.getElementById('contReset').style.display = "block";
+}
+
+
 
 if ('true' === localStorage.isDark) {
     document.documentElement.classList.add('dark');
     
 }
-  
 function toggleTheme() {
-document.documentElement.classList.toggle('dark');
-localStorage.isDark = ('true' !== localStorage.isDark);
+    document.documentElement.classList.toggle('dark');
+    localStorage.isDark = ('true' !== localStorage.isDark);
 }

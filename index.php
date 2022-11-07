@@ -13,7 +13,7 @@
         <script src="juego.js"></script>
         <title>Wordle</title>
     </head>
-    <body>
+    <body onload="bloquejarBoton()">
         <noscript>
             <div class=".noscript">
                 <h1>Javascript NO ESTÀ ACTIVAT</h1>
@@ -58,20 +58,24 @@
                     <input type="text" id="inpUsuari" name="inpUsuari" onkeyup="bloquejarBoton()" placeholder="<?php echo $lang['placeholder']?>" value="<?php if(isset($_SESSION['userName'])){echo $_SESSION['userName'];}?>"><br>
                     <input type="submit" disabled id="botoUsuari" value="<?php echo $lang['bottonPlay']?>"/>
                 </form>
-                <form method="POST" id="formReset">
-                    <input type="submit" value="Reset" name="reset">
-                </form>
-                <?php
-                    function resetSession(){
-                        unset($_SESSION['userName']);
-                    }
-                    if(isset($_POST['reset'])){
-                        resetSession();
-                    } 
-                    echo "<p id='nameuserIndex'>".$_SESSION['userName']."</p>"; 
-                    
-                ?>
+
+                <button id="resetID" onclick="showReset()"><?php echo $lang['reset']?></button>
+                <div id="contReset" class="contReset">
+                    <form class="contResetContent" action="/action_page.php">
+                        <div class="container">
+                        <h1><?php echo $lang['resetTitle']?></h1>
+                        <p><?php echo $lang['resetP']?></p>
+                        
+                        <div>
+                            <button type="button" onclick="document.getElementById('contReset').style.display='none'" class="cancelButton"><?php echo $lang['resetCancel']?></button>
+                            <button type="button" onclick="document.getElementById('contReset').style.display='none'" class="resetButton"><?php echo $lang['resetConfirmation']?></button>
+                        </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </body>
 </html>
+
+
