@@ -12,6 +12,7 @@
               "placeholder" => "Nom d'usuari",
               "home" => "Inici",
               "bottonPlay" => "Jugar",
+              "bottonPlayCrono" => "Contrarellotge",
               "letra" => "Ç",
               "borrar" => "Borrar",
               "enviar" => "Enviar",

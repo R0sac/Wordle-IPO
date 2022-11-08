@@ -9,11 +9,10 @@
     <link rel="shortcut icon" href="https://www.nytimes.com/games-assets/v2/metadata/wordle-favicon.ico?v=v2210261020%22/%3E">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Wordle</title>
 </head>
-<body onload="inicioCronometro()">
+<body id="switchMode">
     <noscript>
             <div class=".noscript">
                 <h1>Javascript NO ESTÀ ACTIVAT</h1>
@@ -70,13 +69,10 @@
                     echo "</tr>";
                 }
                 echo "</table>";
+                //<p id="time">00:00</p>
             ?>
-            <div id="time1">
-                <p id="time1">00:00</p>
-                <input type="button" class="boton" id="start" value="start &#9658;" onclick="inicioModoCrono();">
-            </div>
             <div>       
-                <p id="time">00:00</p>
+                <p id="cronoTime"></p>  
             </div>
             <p><?php echo $randomWord ?></p>
             <div id="contTeclat">

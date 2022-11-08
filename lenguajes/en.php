@@ -12,6 +12,7 @@
        "placeholder" => "Username",
        "home" => "Home",
        "bottonPlay" => "Play",
+       "bottonPlayCrono" => "Time Trial",
        "letra" => "Ñ",
        "borrar" => "Delete",
        "enviar" => "SEND",

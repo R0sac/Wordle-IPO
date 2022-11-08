@@ -12,6 +12,7 @@
             "placeholder" => "Nombre de usuario",
             "home" => "Inicio",
             "bottonPlay" => "Jugar",
+            "bottonPlayCrono" => "Contrarreloj",
             "letra" => "Ñ",
             "borrar" => "Borrar",
             "enviar" => "Enviar",

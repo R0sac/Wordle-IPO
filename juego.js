@@ -11,9 +11,9 @@ loses = 0;
 tries = 0;
 seg = 0;
 min = 0;
-seg2 = 0;
-min2 = 2;
 cronoPoint = 0;
+cronoSeg = 59;
+cronoMin = 1;
 function addLetter(letter){
     flag=false;
 	for (i=line;i<7;i++){
@@ -252,27 +252,41 @@ function cronometro() {
         document.getElementById('time').innerHTML = (min + ":" + seg);
       }
       
-  }
-
-  function inicioModoCrono() {
-    control = setInterval(modoCrono, 1000);
-    document.getElementById('start').value;
 }
-  function modoCrono() {
-    seg -= 1;
-  
-    if (seg == 60) {
-        seg = 0;
-      min -= 1;
+
+function iniciModoCrono() {
+    control = setInterval(modoCrono, 50);
+}
+
+function modoCrono() {
+    cronoSeg -= 1;
+
+    if (cronoSeg == 0){
+        cronoSeg = 60;
+        cronoMin -= 1;
     }
-  
+
+    if (cronoMin === -1) {
+        clearInterval(control)
+    }
+
+
     if (seg < 10 && min < 10) {
-        document.getElementById('time1').innerHTML = ("0" + min + ":" + "0" + seg);
-      } else if (seg >= 10 && min < 10) {
-        document.getElementById('time1').innerHTML = ("0" + min + ":" + seg);
-      } else if (seg < 10 && min > 10) {
-        document.getElementById('time1').innerHTML = (+min + ":" + "0" + seg);
+        document.getElementById('cronoTime').innerHTML = ("0" + cronoMin + ":" + cronoSeg);
+      } else if (cronoSeg >= 10 && cronoMin < 10) {
+        document.getElementById('cronoTime').innerHTML = ("0" + cronoMin + ":" + cronoSeg);
+      } else if (cronoSeg < 10 && cronoMin > 10) {
+        document.getElementById('cronoTime').innerHTML = (+cronoMin + ":" + cronoSeg);
       } else {
-        document.getElementById('time1').innerHTML = (min + ":" + seg);
+        document.getElementById('cronoTime').innerHTML = (cronoMin + ":" + cronoSeg);
       }
-  }
+}
+
+function selectMode() {
+    let normal = inicioCronometro();
+    let crono = iniciModoCrono();
+    document.getElementById("switchMode").setAttribute("onload", normal);
+
+
+}
+
