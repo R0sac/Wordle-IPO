@@ -489,7 +489,7 @@ form{
     }
     #darkmode:hover{
         opacity: 90%;
-        color: #683611;
+        color: #F6E8B8;
     }
     #darkmode::after{
         content: "Light Mode";
@@ -502,7 +502,7 @@ form{
     }
     #resetID:hover{
         opacity: 90%;
-        color: #683611;
+        color: #F6E8B8;
     }
 
     .contReset{
@@ -628,7 +628,7 @@ form{
     }
     .dark #darkmode:hover{
         opacity: 90%;
-        color: #683611;
+        color: #F6E8B8;
     }
     .dark #darkmode::after{
         content: "Light Mode";
@@ -641,7 +641,7 @@ form{
     }
     .dark #resetID:hover{
         opacity: 90%;
-        color: #683611;
+        color: #F6E8B8;
     }
 
     .dark .contReset{

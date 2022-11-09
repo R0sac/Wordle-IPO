@@ -68,7 +68,7 @@
                         
                         <div>
                             <button type="button" onclick="document.getElementById('contReset').style.display='none'" class="cancelButton"><?php echo $lang['resetCancel']?></button>
-                            <button type="button" onclick="document.getElementById('contReset').style.display='none'" class="resetButton"><?php echo $lang['resetConfirmation']?></button>
+                            <button type="button" onclick="document.location.href='./sessionDestroy.php'" class="resetButton"><?php echo $lang['resetConfirmation']?></button>
                         </div>
                         </div>
                     </form>

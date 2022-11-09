@@ -1,5 +1,8 @@
 <?php
     session_start();
+    //if($booleanError !== true){
+    //    http_response_code(403);
+    //}
     include "configuracion.php"
 ?>
 <!DOCTYPE html>

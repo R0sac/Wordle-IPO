@@ -58,6 +58,7 @@
                 else{
                     $_SESSION['userName'] = $_POST['inpUsuari'];
                 }
+                $booleanError = true;
                 echo "<p id='nameuser'>".$_SESSION['userName']."</p>";
                 echo "<p id='pointUser'>".$lang['puntos']."</p>";
                 $fila = 6;
