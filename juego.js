@@ -137,7 +137,7 @@ function checkWord(randWord, points, tries) {
     
     if(countGreen==5){
         //setTimeout(function() { alert("HAS GUANYAT"); }, 100);
-        setTimeout(function(){document.location.href="./win.php";},500)
+        setTimeout(function(){document.location.href="./boolean403win.php";},500)
         rowPoints = 120-20*(line-1);
         wins = parseInt(wins) + 1;
         var nodes = document.getElementById("contTeclat").getElementsByTagName('*');
@@ -148,7 +148,7 @@ function checkWord(randWord, points, tries) {
         
     } else if(line==6){
         //setTimeout(function() { alert("HAS PERDUT"); }, 100);
-        setTimeout(function(){document.location.href="./lose.php";},500)
+        setTimeout(function(){document.location.href="./boolean403lose.php";},500)
         loses = parseInt(loses) + 1;
         var nodes = document.getElementById("contTeclat").getElementsByTagName('*');
         for(var i = 0; i < nodes.length; i++){
@@ -156,7 +156,6 @@ function checkWord(randWord, points, tries) {
         }
         
     }
-
     points = parseInt(points) + rowPoints;
     tries = parseInt(tries) + 1;
 
