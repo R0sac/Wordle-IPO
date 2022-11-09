@@ -56,7 +56,7 @@
                 <form method="POST" action="game.php">
                     <input type="text" id="inpUsuari" name="inpUsuari" onkeyup="bloquejarBoton()" placeholder="<?php echo $lang['placeholder']?>" ><br>
                     <input type="submit" disabled id="botoUsuari" value="<?php echo $lang['bottonPlay']?>"/><br>
-                    <input type="submit" disabled id="botoUsuari" value="<?php echo $lang['bottonPlayCrono']?>"/>
+                    <input type="submit" disabled id="botoUsuari1" value="<?php echo $lang['bottonPlayCrono']?>"/>
                 </form>
             </div>
         </div>

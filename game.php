@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Wordle</title>
 </head>
-<body id="switchMode">
+<body id="switchMode" onload="inicioCronometro()">
     <noscript>
             <div class=".noscript">
                 <h1>Javascript NO ESTÀ ACTIVAT</h1>
@@ -71,8 +71,9 @@
                 echo "</table>";
                 //<p id="time">00:00</p>
             ?>
-            <div>       
-                <p id="cronoTime"></p>  
+            <div>  
+                <p id="cronoTime"></p>
+                <p id="time"></p>
             </div>
             <p><?php echo $randomWord ?></p>
             <div id="contTeclat">

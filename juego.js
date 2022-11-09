@@ -92,9 +92,11 @@ function jumpLine() {
 
 function bloquejarBoton() {
     if(document.getElementById("inpUsuari").value==="") { 
-        document.getElementById('botoUsuari').disabled = true; 
+        document.getElementById('botoUsuari').disabled = true;
+        document.getElementById('botoUsuari1').disabled = true;  
     } else { 
            document.getElementById('botoUsuari').disabled = false;  
+           document.getElementById('botoUsuari1').disabled = false; 
     }
 }
 
@@ -231,7 +233,6 @@ function soundYouWin(){
 
 function inicioCronometro() {
     control = setInterval(cronometro, 1000);
-   
 }
 
 function cronometro() {
@@ -254,7 +255,7 @@ function cronometro() {
       
 }
 
-function iniciModoCrono() {
+function iniciModoContra() {
     control = setInterval(modoCrono, 50);
 }
 
@@ -283,10 +284,9 @@ function modoCrono() {
 }
 
 function selectMode() {
-    let normal = inicioCronometro();
-    let crono = iniciModoCrono();
-    document.getElementById("switchMode").setAttribute("onload", normal);
-
-
+    document.getElementById("switchMode").setAttribute("onload", inicioCronometro());
 }
 
+function selectMode1(){
+    document.getElementById("switchMode").setAttribute("onload", iniciModoContra());
+}
