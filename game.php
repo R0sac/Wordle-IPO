@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Wordle</title>
 </head>
-<body id="switchMode" onload="inicioCronometro()">
+<body onload="gameMode()">
     <noscript>
             <div class=".noscript">
                 <h1>Javascript NO ESTÀ ACTIVAT</h1>

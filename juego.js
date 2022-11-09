@@ -283,10 +283,6 @@ function modoCrono() {
       }
 }
 
-function selectMode() {
-    document.getElementById("switchMode").setAttribute("onload", inicioCronometro());
-}
+   // document.getElementById("switchMode").setAttribute("onload", inicioCronometro);
+    //document.getElementById("switchMode").setAttribute("onload", iniciModoContra);
 
-function selectMode1(){
-    document.getElementById("switchMode").setAttribute("onload", iniciModoContra());
-}

@@ -53,10 +53,37 @@
                 </div>
                 <h4><?php echo $lang['h4']?></h4>
                 
+                <?php 
+                    $_SESSION["loseGameChronoByTime"] = false;
+                    if(isset($_POST["gameMode"])){//ELIGE EL MODO DE JUEGO SEGUN QUE HEMOS ELEGIDO
+                        if($_POST["gameMode"] == $lang['bottonPlay']){//Verifica el modo de juego que hemos seleccionado
+                            $gameModeWordle= 0;//EL 0 es el modo normal
+                            $_SESSION["gameModeWordle"]= 0;
+                        }
+                        
+                        if($_POST["gameMode"] == $lang['bottonPlayCrono']){//Verifica el modo de juego que hemos seleccionado
+                            $gameModeWordle= 1;//EL 1 es el modo crono
+                            $_SESSION["gameModeWordle"]= 1;
+                        }
+                    }
+                    else if(isset($_SESSION["gameModeWordle"])){
+                        if($_SESSION["gameModeWordle"] == 0){//Verifica el modo de juego que hemos seleccionado
+                            $gameModeWordle= 0;//EL 0 es el modo normal
+                        }
+                        
+                        
+                        if($_SESSION["gameModeWordle"] == 1){//Verifica el modo de juego que hemos seleccionado
+                            $gameModeWordle= 1;//EL 1 es el modo crono
+                        }
+                    }
+
+                    
+                ?>
+
                 <form method="POST" action="game.php">
                     <input type="text" id="inpUsuari" name="inpUsuari" onkeyup="bloquejarBoton()" placeholder="<?php echo $lang['placeholder']?>" ><br>
-                    <input type="submit" disabled id="botoUsuari" value="<?php echo $lang['bottonPlay']?>"/><br>
-                    <input type="submit" disabled id="botoUsuari1" value="<?php echo $lang['bottonPlayCrono']?>"/>
+                    <input type="submit" disabled id="botoUsuari" name="gameMode" value="<?php echo $lang['bottonPlay']?>"/><br>
+                    <input type="submit" disabled id="botoUsuari1" name="gameMode" value="<?php echo $lang['bottonPlayCrono']?>"/>
                 </form>
             </div>
         </div>
