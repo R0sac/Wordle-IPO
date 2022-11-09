@@ -27,4 +27,4 @@ flipo
 astro
 reloj
 borra
-arpón
+arpon

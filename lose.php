@@ -1,6 +1,19 @@
 <?php
     session_start();
-    include "configuracion.php"
+    if($_SESSION['booleanError']){
+        http_response_code(403);
+        echo "<div id='contForbidden'><h1>Error 403 - Forbidden</h1></div>";
+    }
+    include "configuracion.php";
+    if(isset($_SESSION["arrayPlayer"])){
+        $_SESSION["arrayPlayer"];
+    }
+    else{
+        $_SESSION["arrayPlayer"] = array();
+    }
+
+    $arrayPlayer = [$_SESSION['userName'],$_SESSION['puntuacio'],$_SESSION['intents'],$_SESSION['victories'],$_SESSION['derrotes']];
+    array_push($_SESSION["arrayPlayer"], $arrayPlayer);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +58,7 @@
             <h1 id="titol">WORDLE</h1>
             <?php
                 echo "<p id='nameuser'>".$_SESSION['userName']."</p>";
-                echo "<p id='pointUser'>".$lang['puntos']."</p>";
+                echo "<p id='pointUser'>".$lang['puntos'].$arrayPlayer[1]."</p>";
             ?>
             <div class="bordeFinalParitda">
                 <h1 id="textFinalPartida"><?php echo $lang['perder']?></h1>

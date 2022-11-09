@@ -23,11 +23,12 @@
               "ganar" => "HAS GUANYAT!",
               "perder" => "HAS PERDUT!",
               "puntos" => "PUNTS: ",
-              "errors" => "ERRORS: ",
-              "exitoses" => "EXITOSES: ",
+              "errors" => "DERROTES: ",
+              "exitoses" => "VICTÒRIES: ",
               "intents" => "INTENTS: ",
               "es" => "Castellano",
               "en" => "English",
-              "ca" => "Català"
+              "ca" => "Català",
+              "file" => "catala_5.txt"
+
        );
-?>

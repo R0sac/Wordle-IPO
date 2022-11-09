@@ -23,11 +23,11 @@
             "ganar" => "HAS GANADO!",
             "perder" => "HAS PERDIDO!",
             "puntos" => "PUNTOS: ",
-            "exitoses" => "EXITOSAS: ",
-            "errors" => "ERRORES: ",
+            "exitoses" => "VICTORIAS: ",
+            "errors" => "DERROTAS: ",
             "intents" => "INTENTOS: ",
             "es" => "Castellano",
             "en" => "English",
-            "ca" => "Català"
+            "ca" => "Català",
+            "file" => "castellano_5.txt"
     );
-    ?>

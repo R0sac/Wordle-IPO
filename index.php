@@ -41,7 +41,7 @@
                 <button id="darkmode" onclick="toggleTheme()"></button>
                 <p id="benvingut"><?php echo $lang['wellcome']?></p>
                 <h1 id="titolIndex">WORDLE</h1>
-                <div>
+                <div id="contIdioma">
                     <button id="botonIdioma"><a href="index.php?lang=ca"> <?php echo $lang['ca'] ?> </a></button> | <button id="botonIdioma"><a href="index.php?lang=en"> <?php echo $lang['en'] ?> </a></button> | <button id="botonIdioma"><a href="index.php?lang=es"> <?php echo $lang['es'] ?> </a></button> 
                 </div>
                 <div id="contInstruccions">
@@ -58,6 +58,10 @@
                 <form method="POST" action="game.php" id="formUsuari">
                     <input type="text" id="inpUsuari" name="inpUsuari" onkeyup="bloquejarBoton()" placeholder="<?php echo $lang['placeholder']?>" value="<?php if(isset($_SESSION['userName'])){echo $_SESSION['userName'];}?>"><br>
                     <input type="submit" disabled id="botoUsuari" value="<?php echo $lang['bottonPlay']?>"/>
+                </form>
+                <form method="POST" action="sortRanking.php">
+                    <input type="hidden" id="arrayGames" name="arrayGames" value="">
+                    <input type="submit" id="botoRanking" value="Hall of Fame"/>
                 </form>
 
                 <button id="resetID" onclick="showReset()"><?php echo $lang['reset']?></button>
@@ -78,5 +82,3 @@
         </div>
     </body>
 </html>
-
-
