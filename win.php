@@ -2,11 +2,9 @@
     session_start();
     if($_SESSION['booleanError']){
         http_response_code(403);
+        echo "<div id='contForbidden'><h1>Error 403 - Forbidden</h1></div>";
     }
     include "configuracion.php";
-    $_SESSION['puntuacio'] += $_POST['puntuacio'];
-    $_SESSION['victories'] += $_POST['victories'];
-    $_SESSION['derrotes'] += $_POST['derrotes'];
     if(isset($_SESSION["arrayPlayer"])){
         $_SESSION["arrayPlayer"];
     }
@@ -14,7 +12,7 @@
         $_SESSION["arrayPlayer"] = array();
     }
 
-    $arrayPlayer = [$_SESSION['userName'],$_SESSION['puntuacio'],$_POST['intents'],$_SESSION['victories'],$_SESSION['derrotes']];
+    $arrayPlayer = [$_SESSION['userName'],$_SESSION['puntuacio'],$_SESSION['intents'],$_SESSION['victories'],$_SESSION['derrotes']];
     array_push($_SESSION["arrayPlayer"], $arrayPlayer);
 ?>
 <!DOCTYPE html>
@@ -52,6 +50,7 @@
             <img src="wordleBanner.png" id="imgEsquerraFinal">
         </div>
         <div id="contCentre">
+            <button id="darkmode" onclick="toggleTheme()"></button>
             <div id="contHeader">
                 <button onclick="document.location.href='./index.php';"><?php echo $lang['home']?></button>
                 <button onclick="document.location.href='./game.php';"><?php echo $lang['bottonPlay']?></button>
@@ -63,25 +62,15 @@
                 echo "<p id='exUser'>".$lang['exitoses'].$arrayPlayer[3]."</p>";
                 echo "<p id='fallUser'>".$lang['errors'].$arrayPlayer[4]."</p>";
                 echo "<p id='triesUser'>".$lang['intents'].$arrayPlayer[2]."</p>";
-                // echo "<br><br><br><br><br><br><br><br><br><br><br><br>";
-                // file_put_contents('records.txt', end($_SESSION["arrayPlayer"]));
-                // echo gettype(end($_SESSION["arrayPlayer"]));
-                // $fp = fopen('records.txt', 'a');//opens file in append mode
-                // for($i=0; $i<count(end($_SESSION["arrayPlayer"])); $i++){
-                //     fwrite($fp, end($_SESSION["arrayPlayer"])[$i].",");
-                // }
-                // fwrite($fp, "\n");
-                // fclose($fp);
-                // echo "File appended successfully";  
             ?>
             <div class="bordeFinalParitda">
                 <h1 id="textFinalPartida"><?php echo $lang['ganar']?></h1>
             </div>
             <div id="publicar">
-                <h1>Vols publicar la teva puntuació? Tornaràs a la pantalla d'inci.</h1>
+                <h1 id="textPublicar">Vols publicar la teva puntuació? Tornaràs a la pantalla d'inci.</h1>
                 <div id="respPublicar">
-                    <button onclick="document.location.href='./saveRecord.php';"><?php echo "SÍ"?></button>
-                    <button onclick="document.location.href='./index.php';"><?php echo "NO"?></button>
+                    <button id="bRespPublS" onclick="document.location.href='./saveRecord.php';"><?php echo "SÍ"?></button>
+                    <button id="bRespPublN" onclick="document.location.href='./index.php';"><?php echo "NO"?></button>
                 </div>
             </div>
         </div>

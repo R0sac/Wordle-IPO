@@ -22,6 +22,7 @@
             <img src="wordleBanner.png" id="imgEsquerraFinal">
         </div>
         <div id="contCentre">
+            <button id="darkmode" onclick="toggleTheme()"></button>
             <div id="contHeader">
                 <button onclick="document.location.href='./index.php';"><?php echo $lang['home']?></button>
                 <button onclick="document.location.href='./game.php';"><?php echo $lang['bottonPlay']?></button>
