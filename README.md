@@ -25,6 +25,6 @@ Wordle es un juego de adivinar palabras, que tiene un formato de crucigrama, en 
 
 ## Cómo se usa
 
-    Puedes usar cualquier navegador, hay que escribir en el buscador **http://localhost:8080/index.php**
+    Puedes usar cualquier navegador, hay que escribir en el buscador http://localhost:8080/index.php
 
 
