@@ -1,9 +1,10 @@
 html, body {
-    height: 99%;
+    height: 100%;
     background-color: #683611;
     color: #683611;
     overflow-x:hidden;
     overflow-y:hidden;
+    margin:0px;
 }
 #contPrincipal{
     background-color: #F6E8B8;
@@ -137,6 +138,45 @@ html, body {
     text-align: center;
     overflow: hidden;
 }
+#contIdioma{
+    margin-bottom:3px;
+}
+#contTimer {
+    height: auto;
+    width: 5%;
+    background-color: #683611;
+    color: #F6E8B8;
+    font-size: 100%;
+    font-weight: bold;
+    border-radius: 10px;
+    position: absolute;
+    left: 1243px;
+    top: 12px;
+    font-size: 30px;
+    font-family: Arial;
+    text-align: center;
+}
+
+#darkmode{
+    height: 5%;
+    width: 5%;
+    background-color: #683611;
+    color: #F6E8B8;
+    font-size: 100%;
+    font-weight: bold;
+    border-radius: 10px;
+    position: absolute;
+    left: 312px;
+    top: 12px;
+}
+#darkmode:hover{
+    opacity: 90%;
+    color: #F6E8B8;
+}
+#darkmode::after{
+    content: "Dark Mode";
+    visibility: visible;
+}
 
 #contPrincipal img#imgCentre{
     width: 35%;
@@ -170,6 +210,75 @@ html, body {
     padding-top: 10px;
 }
 
+#botoRanking{
+    height: 5%;
+    width: 10%;
+    background-color: #683611;
+    color: #F6E8B8;
+    font-size: 100%;
+    font-weight: bold;
+    border-radius: 10px;
+    position: absolute;
+    left: 312px;
+    top: 850px;
+}
+#botoRanking:hover{
+    opacity: 90%;
+    color: #F6E8B8;
+}
+
+/*Botó de reset*/
+#resetID{
+    height: 5%;
+    width: 8%;
+    background-color: #683611;
+    color: #F6E8B8;
+    font-size: 100%;
+    font-weight: bold;
+    border-radius: 10px;
+    position: absolute;
+    left: 1100px;
+    top: 850px;
+}
+#resetID:hover{
+    opacity: 90%;
+    color: #F6E8B8;
+}
+.cancelButton, .resetButton {
+    float: left;
+    width: 25%;
+  }
+.cancelButton {
+    background-color: #888;
+    color: black;
+    margin-left: 25%;
+  }
+.resetButton {
+    background-color: #f44336;
+}
+.contReset {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 25%;
+    background-color: #683611;
+    margin-left: 25%;
+    margin-top: 15%;
+    border: 5px solid #000;
+    border-radius: 10px;
+}
+.contResetContent {
+    background-color: #F6E8B8;
+    border: 1px solid #000;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    margin-top: 2%;
+}
+
 #nameuser{
     font-size: 22px;
     font-family: Arial;
@@ -186,6 +295,10 @@ html, body {
     float: right;
     margin-right: 25%;
     margin-bottom: 5px;
+}
+
+#grootVideo{
+    display: none;
 }
 
 #exUser {
@@ -263,7 +376,7 @@ html, body {
     font-weight: 600;
     font-size: 20px;
     color: #683611;
-    background-color: #F6E8B8;
+    background-color: #e2e8f0;
     border-radius: 6px;
     border: 2px solid #683611;
     width: 9%;
@@ -335,6 +448,11 @@ form{
     height: 30%;
     margin: 0 25px;
 }
+#formUsuari{
+    width: 80%;
+    height: 20%;
+    margin: auto;
+}
 
 #inpUsuari{
     width:100%;
@@ -360,21 +478,6 @@ form{
     border-radius: 10px;
 }
 #botoUsuari:hover{
-    background-color: #96581C;
-    color: #F6E8B8;
-    border: 5px solid #683611;
-}
-#botoUsuari1{
-    margin-top:3%;
-    width: 40%;
-    height: 20%;
-    background-color: #683611;
-    color: #F6E8B8;
-    font-size: 100%;
-    font-weight: bold;
-    border-radius: 10px;
-}
-#botoUsuari1:hover{
     background-color: #96581C;
     color: #F6E8B8;
     border: 5px solid #683611;
@@ -447,7 +550,346 @@ noscript a{
     color: white;
 }
 
-@media only screen and (max-width: 800px){
+
+/*Forbidden*/
+#contForbidden{
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    text-align: center;
+    color: #F6E8B8;
+    background-color: #683611;
+}
+
+/*Hall of Fame*/
+#divHallofFame{
+    margin-top: 40px;
+    height: 80%;
+    overflow-y: scroll;
+}
+.tableHallOfFame{
+    background-image: linear-gradient(to bottom, #683611 0%, #EEC76F  12%);
+    background-origin: border-box;
+    border-spacing: 5px;
+    border: 5px solid transparent;
+    width: 100%;
+}
+.tableHallOfFame th{
+    font-size: x-large;
+    color: #F6E8B8;
+}
+.tableHallOfFame td{
+    font-weight: bold;
+}
+
+@media (prefers-color-scheme: dark){
+    body {
+        background-color: black;
+    }
+
+    #contTimer {
+        background-color: black;
+        color: #F6E8B8;
+    }
+    
+    #botoRanking{
+        background-color: black;
+        color: #F6E8B8;
+    }
+    #botoRanking:hover{
+        opacity: 90%;
+        color: #F6E8B8;
+    }
+
+    #darkmode{
+          background-color: black;
+          color: #F6E8B8;
+    }
+    #darkmode:hover{
+        opacity: 90%;
+        color: #F6E8B8;
+    }
+    #darkmode::after{
+        content: "Light Mode";
+        visibility: visible;
+    }
+
+    #resetID{
+        background-color: black;
+        color: #F6E8B8;
+    }
+    #resetID:hover{
+        opacity: 90%;
+        color: #F6E8B8;
+    }
+
+    .contReset{
+        background-color: black;
+        color: #F6E8B8;
+        border: 5px solid #F6E8B8;
+    }
+    .contResetContent{
+        background-color: #683611;
+    }
+
+    #contPrincipal {
+        background-color: #683611;
+        color: black;
+    }
+    #contInstruccions {
+        background-color: black;
+        color: #F6E8B8;
+    }
+    #inpUsuari {
+        background-color: black;
+        color: #F6E8B8;
+    }
+    #inpUsuari::placeholder{
+        color: #F6E8B8;
+    }
+    #botoUsuari{
+        background-color: black;
+        color: #F6E8B8;
+    }
+    #botoUsuari:hover{
+        background-color: #96581C;
+        color: #F6E8B8;
+        border: 5px solid #F6E8B8;
+    }
+    #contHeader{
+        background-color: #F6E8B8;
+        border: 2px solid #F6E8B8;
+    }
+    
+    #contHeader button{
+        background-color: #F6E8B8;
+        color: #683611;
+    }
+    
+    #contHeader button:hover{
+        background-color: #96581C;
+        color: #F6E8B8;
+        border: 1px solid #000;
+    }
+
+    .tablaLetras td{
+        border: 3px solid #F6E8B8;
+        background-color: black;
+        color: #F6E8B8;
+    }
+
+    #contTeclat{
+        background-color: #F6E8B8;
+        color: #683611;
+    }
+    .boton_personalizado{
+        color: #F6E8B8;
+        background-color: #683611;
+        border: 2px solid #F6E8B8;
+    }
+    .boton_personalizado:hover{
+        opacity: 90%;
+    }
+
+    .boton_personalizado_accio{
+        color: #F6E8B8;
+        background-color: #683611;
+        border: 2px solid #F6E8B8;
+    }
+    .boton_personalizado_accio:hover{
+        opacity: 90%;
+    }
+
+    .boton_personalizado_accio1{
+        color: #F6E8B8;
+        background-color: #683611;
+        border: 2px solid #F6E8B8;
+    }
+    .boton_personalizado_accio1:hover{
+        opacity: 90%;
+    }
+        
+    #textFinalPartida{
+        font-size: 75px;
+        font-family: Arial;
+        text-shadow: 0 0 80px rgba(236, 236, 236, 0.897);
+        letter-spacing: 0;
+        display: block;
+
+        /*Colocar imagen backgound*/
+        background: url(imagen-animacion-dark.png) repeat-y;
+        -webkit-background-clip: text;
+        background-clip: text;
+        
+
+        /*Animar imagen backgound*/
+        -webkit-text-fill-color: transparent;
+        -webkit-animation: resultado 80s linear infinite;
+        
+        /*Activar aceleracion de hardware*/
+        -webkit-transform: translate3d(0,0,0);
+        -webkit-backface-visibility: hidden;
+    }
+    .bordeFinalParitda{
+        border: 4px double #EEC76F;
+    }
+}
+
+@media not print {
+    .dark body {
+      background-color: black;
+    }
+
+    .dark #contTimer {
+        background-color: black;
+        color: #F6E8B8;
+    }
+
+    .dark #botoRanking{
+        background-color: black;
+        color: #F6E8B8;
+    }
+    .dark #botoRanking:hover{
+        opacity: 90%;
+        color: #F6E8B8;
+    }
+
+    .dark #darkmode{
+        background-color: black;
+        color: #F6E8B8;
+    }
+    .dark #darkmode:hover{
+        opacity: 90%;
+        color: #F6E8B8;
+    }
+    .dark #darkmode::after{
+        content: "Light Mode";
+        visibility: visible;
+    }
+
+    .dark #resetID{
+        background-color: black;
+        color: #F6E8B8;
+    }
+    .dark #resetID:hover{
+        opacity: 90%;
+        color: #F6E8B8;
+    }
+
+    .dark .contReset{
+        background-color: black;
+        color: #F6E8B8;
+        border: 5px solid #F6E8B8;
+    }
+    .dark .contResetContent{
+        background-color: #683611;
+    }
+
+    .dark #contPrincipal {
+        background-color: #683611;
+        color: black;
+    }
+    .dark #contInstruccions {
+        background-color: black;
+        color: #F6E8B8;
+    }
+    .dark #inpUsuari {
+        background-color: black;
+        color: #F6E8B8;
+    }
+    .dark #inpUsuari::placeholder{
+        color: #F6E8B8;
+    }
+    .dark #botoUsuari{
+        background-color: black;
+        color: #F6E8B8;
+    }
+    .dark #botoUsuari:hover{
+        background-color: #96581C;
+        color: #F6E8B8;
+        border: 5px solid #F6E8B8;
+    }
+    .dark #contHeader{
+        background-color: #F6E8B8;
+        border: 2px solid #F6E8B8;
+    }
+    
+    .dark #contHeader button{
+        background-color: #F6E8B8;
+        color: #683611;
+    }
+    
+    .dark #contHeader button:hover{
+        background-color: #96581C;
+        color: #F6E8B8;
+        border: 1px solid #000;
+    }
+
+    .dark .tablaLetras td{
+        border: 3px solid #F6E8B8;
+        background-color: black;
+        color: #F6E8B8;
+    }
+
+    .dark #contTeclat{
+        background-color: #F6E8B8;
+        color: #683611;
+    }
+    .dark .boton_personalizado{
+        color: #F6E8B8;
+        background-color: #683611;
+        border: 2px solid #F6E8B8;
+    }
+    .dark .boton_personalizado:hover{
+        opacity: 90%;
+    }
+
+    .dark .boton_personalizado_accio{
+        color: #F6E8B8;
+        background-color: #683611;
+        border: 2px solid #F6E8B8;
+    }
+    .dark .boton_personalizado_accio:hover{
+        opacity: 90%;
+    }
+
+    .dark .boton_personalizado_accio1{
+        color: #F6E8B8;
+        background-color: #683611;
+        border: 2px solid #F6E8B8;
+    }
+    .dark .boton_personalizado_accio1:hover{
+        opacity: 90%;
+    }
+        
+    .dark #textFinalPartida{
+        font-size: 75px;
+        font-family: Arial;
+        text-shadow: 0 0 80px rgba(236, 236, 236, 0.897);
+        letter-spacing: 0;
+        display: block;
+
+        /*Colocar imagen backgound*/
+        background: url(imagen-animacion-dark.png) repeat-y;
+        -webkit-background-clip: text;
+        background-clip: text;
+        
+
+        /*Animar imagen backgound*/
+        -webkit-text-fill-color: transparent;
+        -webkit-animation: resultado 80s linear infinite;
+        
+        /*Activar aceleracion de hardware*/
+        -webkit-transform: translate3d(0,0,0);
+        -webkit-backface-visibility: hidden;
+    }
+    .dark .bordeFinalParitda{
+        border: 4px double #EEC76F;
+    }
+
+  }
+
+  @media only screen and (max-width: 800px), only screen and (max-height: 600px){
     #titolIndex{
         font-size: 50px;
     }
@@ -455,6 +897,52 @@ noscript a{
         font-size: 50px;
         margin-top: 0px;
         margin-bottom: -15px;
+    }
+
+    #contIdioma a{
+        font-size: 15px;
+    }
+
+    #contTimer {
+        width: 15%;
+        left: 528px;
+        font-size: 25px;
+    }
+
+    #darkmode{
+        left: 28px;
+        width: 10%;
+        height: auto;
+    }
+
+    #botoRanking{
+        width: 17%;
+        left: 8px;
+        top: 538px;
+    }
+    
+    #resetID {
+        left: 551px;
+        top: 538px;
+        width: 10%;
+        font-size: 11px;
+    }
+    .contReset {
+        width: 40%;
+        height: 30%;
+        margin-left: 30%;
+        margin-top: 30%;
+        font-size: 14px;
+    }
+    .contResetContent {
+        height: 90%;
+    }
+    .cancelButton, .resetButton {
+        float: left;
+        width: 30%;
+    }
+    .cancelButton {
+        margin-left: 20%;
     }
 
     #contInstruccions{
@@ -567,6 +1055,16 @@ noscript a{
         margin-top: 50%;
         margin-bottom: 54%;
     }
+    .tableHallOfFame{
+        border-spacing: 0px;
+    }
+    .tableHallOfFame th{
+        font-size: 13px;
+        color: #F6E8B8;
+    }
+    .tableHallOfFame td{
+        font-size: 11px;
+    }
 }
 
 
@@ -585,6 +1083,51 @@ noscript a{
         position: relative;
         top: -54px;
         height: 60px;
+    }
+    #contTimer {
+        width: 20%;
+        left: 288px;
+        top: 618px;
+        font-size: 20px;
+    }
+    #darkmode {
+        left: 154px;
+        top: 629px;
+        width: 15%;
+        height: auto;
+    }
+    #botoRanking{
+        width: 25%;
+        left: 8px;
+        top: 590px;
+        font-size: 11px;
+        height: auto;
+    }
+    #resetID {
+        left: 300px;
+        top: 590px;
+        width: 16%;
+        height: auto;
+        font-size: 11px;
+    }
+
+    #divHallofFame {
+        margin-top: 54px;
+    }
+
+    .contReset {
+        width: 70%;
+        height: 25%;
+        margin-left: 15%;
+        margin-top: 60%;
+        font-size: 15px;
+    }
+    .cancelButton, .resetButton {
+        float: left;
+        width: 35%;
+    }
+    .cancelButton {
+        margin-left: 15%;
     }
 
     #contDreta{
@@ -714,7 +1257,11 @@ noscript a{
         top: 0px;
         left: 245px;
         
-      }
+    }
+    .tableHallOfFame{
+        margin-top: 150px;
+    }
 }
+
 
 

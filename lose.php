@@ -1,9 +1,10 @@
 <?php
     session_start();
+    if($_SESSION['booleanError']){
+        http_response_code(403);
+        echo "<div id='contForbidden'><h1>Error 403 - Forbidden</h1></div>";
+    }
     include "configuracion.php";
-    $_SESSION['puntuacio'] += $_POST['puntuacio'];
-    $_SESSION['victories'] += $_POST['victories'];
-    $_SESSION['derrotes'] += $_POST['derrotes'];
     if(isset($_SESSION["arrayPlayer"])){
         $_SESSION["arrayPlayer"];
     }
@@ -11,7 +12,7 @@
         $_SESSION["arrayPlayer"] = array();
     }
 
-    $arrayPlayer = [$_SESSION['userName'],$_SESSION['puntuacio'],$_POST['intents'],$_SESSION['victories'],$_SESSION['derrotes']];
+    $arrayPlayer = [$_SESSION['userName'],$_SESSION['puntuacio'],$_SESSION['intents'],$_SESSION['victories'],$_SESSION['derrotes']];
     array_push($_SESSION["arrayPlayer"], $arrayPlayer);
 ?>
 <!DOCTYPE html>
@@ -49,6 +50,7 @@
             <img src="wordleBanner.png" id="imgEsquerraFinal">
         </div>
         <div id="contCentre">
+            <button id="darkmode" onclick="toggleTheme()"></button>
             <div id="contHeader">
                 <button onclick="document.location.href='./index.php';"><?php echo $lang['home']?></button>
                 <button onclick="document.location.href='./game.php';"><?php echo $lang['bottonPlay']?></button>

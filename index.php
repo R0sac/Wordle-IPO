@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $_SESSION['booleanError'] = true;
     include "configuracion.php"
 ?>
 <!DOCTYPE html>
@@ -13,7 +14,7 @@
         <script src="juego.js"></script>
         <title>Wordle</title>
     </head>
-    <body>
+    <body onload="bloquejarBoton()">
         <noscript>
             <div class=".noscript">
                 <h1>Javascript NO ESTÀ ACTIVAT</h1>
@@ -37,9 +38,10 @@
                 <img src="wordleBanner.png" id="imgEsquerraBenv">
             </div>
             <div id="contCentre">
+                <button id="darkmode" onclick="toggleTheme()"></button>
                 <p id="benvingut"><?php echo $lang['wellcome']?></p>
                 <h1 id="titolIndex">WORDLE</h1>
-                <div>
+                <div id="contIdioma">
                     <button id="botonIdioma"><a href="index.php?lang=ca"> <?php echo $lang['ca'] ?> </a></button> | <button id="botonIdioma"><a href="index.php?lang=en"> <?php echo $lang['en'] ?> </a></button> | <button id="botonIdioma"><a href="index.php?lang=es"> <?php echo $lang['es'] ?> </a></button> 
                 </div>
                 <div id="contInstruccions">
@@ -53,38 +55,29 @@
                 </div>
                 <h4><?php echo $lang['h4']?></h4>
                 
-                <?php 
-                    $_SESSION["loseGameChronoByTime"] = false;
-                    if(isset($_POST["gameMode"])){//ELIGE EL MODO DE JUEGO SEGUN QUE HEMOS ELEGIDO
-                        if($_POST["gameMode"] == $lang['bottonPlay']){//Verifica el modo de juego que hemos seleccionado
-                            $gameModeWordle= 0;//EL 0 es el modo normal
-                            $_SESSION["gameModeWordle"]= 0;
-                        }
-                        
-                        if($_POST["gameMode"] == $lang['bottonPlayCrono']){//Verifica el modo de juego que hemos seleccionado
-                            $gameModeWordle= 1;//EL 1 es el modo crono
-                            $_SESSION["gameModeWordle"]= 1;
-                        }
-                    }
-                    else if(isset($_SESSION["gameModeWordle"])){
-                        if($_SESSION["gameModeWordle"] == 0){//Verifica el modo de juego que hemos seleccionado
-                            $gameModeWordle= 0;//EL 0 es el modo normal
-                        }
-                        
-                        
-                        if($_SESSION["gameModeWordle"] == 1){//Verifica el modo de juego que hemos seleccionado
-                            $gameModeWordle= 1;//EL 1 es el modo crono
-                        }
-                    }
-
-                    
-                ?>
-
-                <form method="POST" action="game.php">
-                    <input type="text" id="inpUsuari" name="inpUsuari" onkeyup="bloquejarBoton()" placeholder="<?php echo $lang['placeholder']?>" ><br>
-                    <input type="submit" disabled id="botoUsuari" name="gameMode" value="<?php echo $lang['bottonPlay']?>"/><br>
-                    <input type="submit" disabled id="botoUsuari1" name="gameMode" value="<?php echo $lang['bottonPlayCrono']?>"/>
+                <form method="POST" action="game.php" id="formUsuari">
+                    <input type="text" id="inpUsuari" name="inpUsuari" onkeyup="bloquejarBoton()" placeholder="<?php echo $lang['placeholder']?>" value="<?php if(isset($_SESSION['userName'])){echo $_SESSION['userName'];}?>"><br>
+                    <input type="submit" disabled id="botoUsuari" value="<?php echo $lang['bottonPlay']?>"/>
                 </form>
+                <form method="POST" action="sortRanking.php">
+                    <input type="hidden" id="arrayGames" name="arrayGames" value="">
+                    <input type="submit" id="botoRanking" value="Hall of Fame"/>
+                </form>
+
+                <button id="resetID" onclick="showReset()"><?php echo $lang['reset']?></button>
+                <div id="contReset" class="contReset">
+                    <form class="contResetContent" action="/action_page.php">
+                        <div class="container">
+                        <h1><?php echo $lang['resetTitle']?></h1>
+                        <p><?php echo $lang['resetP']?></p>
+                        
+                        <div>
+                            <button type="button" onclick="document.getElementById('contReset').style.display='none'" class="cancelButton"><?php echo $lang['resetCancel']?></button>
+                            <button type="button" onclick="document.location.href='./sessionDestroy.php'" class="resetButton"><?php echo $lang['resetConfirmation']?></button>
+                        </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </body>

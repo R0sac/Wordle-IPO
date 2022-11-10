@@ -92,11 +92,9 @@ function jumpLine() {
 
 function bloquejarBoton() {
     if(document.getElementById("inpUsuari").value==="") { 
-        document.getElementById('botoUsuari').disabled = true;
-        document.getElementById('botoUsuari1').disabled = true;  
+        document.getElementById('botoUsuari').disabled = true; 
     } else { 
            document.getElementById('botoUsuari').disabled = false;  
-           document.getElementById('botoUsuari1').disabled = false; 
     }
 }
 
@@ -105,15 +103,30 @@ function checkWord(randWord, points, tries) {
     posNonRep = 0;
     countGreen = 0;
     rowPoints = 0;
+    if(userWord == "GROOT"){
+        //Audio Groot
+        var sonido = document.createElement("iframe");
+        sonido.setAttribute("src","grootAudio.mp3");
+        document.body.appendChild(sonido);
+        document.getElementById("grootVideo").style.display="block";
+        document.getElementById("contTeclat").style.display="none";
+        setTimeout(function(){
+            document.getElementById("grootVideo").style.display="none";
+            document.getElementById("contTeclat").style.display="block";},42750);
+    }
     for(i=1;i<userWord.length+1;i++){
         let letterPosition = randWord.indexOf(userWord[i-1]);
         //console.log(letterPosition);
         if (letterPosition === -1) {
-            document.getElementById('' + line + i).style.background = "grey";
+            document.getElementById('' + line + i).style.background = "rgb(117, 117, 117)";
+            if(!(["rgb(67, 160, 71)","rgb(228, 168, 29)"].includes(document.getElementById(document.getElementById('' + line + i).value).style.backgroundColor))){
+                document.getElementById(document.getElementById('' + line + i).value).style.background = "rgb(117, 117, 117)";
+            }
             posNonRep+='' + i;
         } else {
             if(userWord[i-1] === randWord[i-1]){
-                document.getElementById('' + line + i).style.background = "green";
+                document.getElementById('' + line + i).style.background = "rgb(67, 160, 71)";
+                document.getElementById(document.getElementById('' + line + i).value).style.background = "rgb(67, 160, 71)";
                 posNonRep+='' + i;
                 randWord = randWord.replace(randWord[letterPosition],"#");
                 countGreen+=1;
@@ -128,13 +141,19 @@ function checkWord(randWord, points, tries) {
         //console.log(letterPosition);
         //console.log(i);
         //console.log(posNonRep.includes(i));
-        if(posNonRep.includes(i)){
+        if((posNonRep.toString()).includes(i)){
 
         }else{
             if (letterPosition === -1) {
-                document.getElementById('' + line + i).style.background = "grey";
+                document.getElementById('' + line + i).style.background = "rgb(117, 117, 117)";
+                if(!(["rgb(67, 160, 71)","rgb(228, 168, 29)"].includes(document.getElementById(document.getElementById('' + line + i).value).style.backgroundColor))){
+                    document.getElementById(document.getElementById('' + line + i).value).style.background = "rgb(117, 117, 117)";
+                }
             } else {
-                document.getElementById('' + line + i).style.background = "yellow";
+                document.getElementById('' + line + i).style.background = "rgb(228, 168, 29)";
+                if(!(document.getElementById(document.getElementById('' + line + i).value).style.backgroundColor == "rgb(67, 160, 71)")){
+                    document.getElementById(document.getElementById('' + line + i).value).style.background = "rgb(228, 168, 29)";
+                }
                 randWord = randWord.replace(randWord[letterPosition],"#");
                 rowPoints+=((120-20*(line-1))/2)/(casellesFila*2);
                 //console.log(randWord);
@@ -149,28 +168,26 @@ function checkWord(randWord, points, tries) {
         points = parseInt(points) + rowPoints;
         tries = parseInt(tries) + 1;
         if (min >= 0 && min <= 1 & seg <= 1) {
-           cronoPoint = cronoPoint + 50;
-        }else if (min >= 1 && min <= 2 && seg <= 1 ) {
-            cronoPoint = cronoPoint + 40;   
-        }else if (min >= 2 && seg >= 1 && min <= 3) {
-            cronoPoint = cronoPoint + 30;
-        }else if (min >= 3 && seg >= 1 && min <= 4) {
-            cronoPoint = cronoPoint + 20;
-        }else if (min >= 4 && seg >= 1 && min <= 5 && seg <= 1) {
-            cronoPoint = cronoPoint + 10;
-        }else{
-            cronoPoint;
-        }
-        finalPoints = cronoPoint + points;
-    
+            cronoPoint = cronoPoint + 50;
+         }else if (min >= 1 && min <= 2 && seg <= 1 ) {
+             cronoPoint = cronoPoint + 40;   
+         }else if (min >= 2 && seg >= 1 && min <= 3) {
+             cronoPoint = cronoPoint + 30;
+         }else if (min >= 3 && seg >= 1 && min <= 4) {
+             cronoPoint = cronoPoint + 20;
+         }else if (min >= 4 && seg >= 1 && min <= 5 && seg <= 1) {
+             cronoPoint = cronoPoint + 10;
+         }else{
+             cronoPoint;
+         }
+         finalPoints = cronoPoint + points;
         document.getElementById("puntuacio").setAttribute("value", finalPoints);
         document.getElementById("pointUser").innerHTML = "PUNTS: "+finalPoints;
         document.getElementById("intents").setAttribute("value", tries);
         document.getElementById("victories").setAttribute("value", wins);
         document.getElementById("derrotes").setAttribute("value", loses);
-        document.getElementById("form").setAttribute("action", "win.php");
+        document.getElementById("form").setAttribute("action", "boolean403win.php");
         // document.getElementById("form").setAttribute("onsubmit", "return false");
-        alert("punts: "+finalPoints+", intents: "+tries+", victories: "+wins+", derrotes: "+loses)
         document.getElementById("form").submit();
         //setTimeout(function(){document.location.href="./win.php";},500)
         var nodes = document.getElementById("contTeclat").getElementsByTagName('*');
@@ -189,11 +206,10 @@ function checkWord(randWord, points, tries) {
         document.getElementById("intents").setAttribute("value", tries);
         document.getElementById("victories").setAttribute("value", wins);
         document.getElementById("derrotes").setAttribute("value", loses);
-        document.getElementById("form").setAttribute("action", "lose.php");
+        document.getElementById("form").setAttribute("action", "boolean403lose.php");
         // document.getElementById("form").setAttribute("onsubmit", "return false");
-        alert("punts: "+points+", intents: "+tries+", victories: "+wins+", derrotes: "+loses)
         document.getElementById("form").submit();
-        setTimeout(function(){document.location.href="./lose.php";},500)
+        //setTimeout(function(){document.location.href="./lose.php";},500)
         var nodes = document.getElementById("contTeclat").getElementsByTagName('*');
         for(var i = 0; i < nodes.length; i++){
             nodes[i].disabled = true;
@@ -210,7 +226,7 @@ function checkWord(randWord, points, tries) {
         document.getElementById("derrotes").setAttribute("value", loses);
         document.getElementById("form").setAttribute("onsubmit", "return false");
 
-        alert("punts: "+points+", intents: "+tries+", victories: "+wins+", derrotes: "+loses)
+        // alert("punts: "+points+", intents: "+tries+", victories: "+wins+", derrotes: "+loses)
     }
 
 }
@@ -229,6 +245,19 @@ function soundYouWin(){
 	var sonido = document.createElement("iframe");
 	sonido.setAttribute("src","win.mp3");
 	document.body.appendChild(sonido);
+}
+
+function showReset() {
+    document.getElementById('contReset').style.display = "block";
+}
+
+if ('true' === localStorage.isDark) {
+    document.documentElement.classList.add('dark');
+    
+}
+function toggleTheme() {
+    document.documentElement.classList.toggle('dark');
+    localStorage.isDark = ('true' !== localStorage.isDark);
 }
 
 function inicioCronometro() {
@@ -273,7 +302,7 @@ function modoCrono() {
 
 
     if (seg < 10 && min < 10) {
-        document.getElementById('cronoTime').innerHTML = ("0" + cronoMin + ":" + cronoSeg);
+        document.getElementBy('cronoTime').innerHTML = ("0" + cronoMin + ":" + cronoSeg);
       } else if (cronoSeg >= 10 && cronoMin < 10) {
         document.getElementById('cronoTime').innerHTML = ("0" + cronoMin + ":" + cronoSeg);
       } else if (cronoSeg < 10 && cronoMin > 10) {
@@ -282,7 +311,3 @@ function modoCrono() {
         document.getElementById('cronoTime').innerHTML = (cronoMin + ":" + cronoSeg);
       }
 }
-
-   // document.getElementById("switchMode").setAttribute("onload", inicioCronometro);
-    //document.getElementById("switchMode").setAttribute("onload", iniciModoContra);
-

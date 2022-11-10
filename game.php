@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $_SESSION['booleanError'] = true;
     include "configuracion.php"
 ?>
 <!DOCTYPE html>
@@ -9,10 +10,11 @@
     <link rel="shortcut icon" href="https://www.nytimes.com/games-assets/v2/metadata/wordle-favicon.ico?v=v2210261020%22/%3E">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
     <title>Wordle</title>
 </head>
-<body onload="gameMode()">
+<body onload="inicioCronometro()">
     <noscript>
             <div class=".noscript">
                 <h1>Javascript NO ESTÀ ACTIVAT</h1>
@@ -36,6 +38,8 @@
             <img src="wordleBanner.png" id="imgEsquerraJugar">
         </div>
         <div id="contCentre">
+            <button id="darkmode" onclick="toggleTheme()"></button>
+            
             <div id="contHeader">
                 <button onclick="document.location.href='./index.php';"><?php echo $lang['home']?></button>
                 <button onclick="document.location.href='./game.php';"><?php echo $lang['bottonPlay']?></button>
@@ -69,13 +73,17 @@
                     echo "</tr>";
                 }
                 echo "</table>";
-                //<p id="time">00:00</p>
             ?>
-            <div>  
-                <p id="cronoTime"></p>
-                <p id="time"></p>
+
+            <div id='grootVideo'>
+                <video width="560" height="250" autoplay muted>
+                    <source src="groot.mp4" type="video/mp4">
+                </video>
             </div>
             <p><?php echo $randomWord ?></p>
+            <div id="contTimer">
+                <p id="time"></p>
+            </div>
             <div id="contTeclat">
                 <div id="teclatFila1">
                     <button onclick="addLetter('Q')" id="Q" class="boton_personalizado">Q</button>
@@ -99,7 +107,7 @@
                     <button onclick="addLetter('J')" id="J"class="boton_personalizado">J</button>
                     <button onclick="addLetter('K')" id="K"class="boton_personalizado">K</button>
                     <button onclick="addLetter('L')" id="L"class="boton_personalizado">L</button>
-                    <button onclick="addLetter('<?php echo $lang['letra']?>')" id="Ç"class="boton_personalizado"><?php echo $lang['letra']?></button>
+                    <button onclick="addLetter('<?php echo $lang['letra']?>')" id="<?php echo $lang['letra']?>"class="boton_personalizado"><?php echo $lang['letra']?></button>
                 </div>
                 <div id="teclatFila3">
                     <form id="form" name="enviarForm" onsubmit="return true" method="post" action="">
