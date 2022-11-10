@@ -1,6 +1,8 @@
 <?php
     session_start();
+    $_SESSION['booleanError'] = true;
     include "configuracion.php"
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +15,7 @@
     , initial-scale=1.0">
     <title>Wordle</title>
 </head>
-<body>
+<body onload="inicioCronometro()">
     <noscript>
             <div class=".noscript">
                 <h1>Javascript NO ESTÀ ACTIVAT</h1>
@@ -37,6 +39,19 @@
             <img src="wordleBanner.png" id="imgEsquerraJugar">
         </div>
         <div id="contCentre">
+            <button id="darkmode" onclick="toggleTheme()"></button>
+            <?php
+                $fh = fopen('records.txt','r');
+                $arrayGames = [];
+                while ($line = fgets($fh)) {
+                    $lineReaden = explode(",",$line);
+                    array_push($arrayGames,array_slice($lineReaden,0,5));
+                }
+                fclose($fh);
+                $points = array_column($arrayGames,1);
+                array_multisort($points,SORT_DESC,$arrayGames);
+                echo "<p id='top1'>"."TOP 1: "."<br>".$arrayGames[0][0]."</p>";
+            ?>
             <div id="contHeader">
                 <button onclick="document.location.href='./index.php';"><?php echo $lang['home']?></button>
                 <button onclick="document.location.href='./game.php';"><?php echo $lang['bottonPlay']?></button>
@@ -44,7 +59,7 @@
             <?php
                 function getRandomLine($filename) { 
                     $lines = file($filename); 
-                    return strtoupper(substr($lines[array_rand($lines)],0,-2)); //ARREGLAR -1 O -2
+                    return strtoupper(substr($lines[array_rand($lines)],0,-1)); //ARREGLAR -1 O -2
                 }
                     $randomWord = getRandomLine($lang['file']);
             ?>
@@ -71,6 +86,16 @@
                 }
                 echo "</table>";
             ?>
+
+            <div id='grootVideo'>
+                <video width="560" height="250" autoplay muted>
+                    <source src="groot.mp4" type="video/mp4">
+                </video>
+            </div>
+            <!--<p><?php //echo $randomWord ?></p>-->
+            <div id="contTimer">
+                <p id="time"></p>
+            </div>
             <div id="contTeclat">
                 <div id="teclatFila1">
                     <button onclick="addLetter('Q')" id="Q" class="boton_personalizado">Q</button>
@@ -94,10 +119,10 @@
                     <button onclick="addLetter('J')" id="J"class="boton_personalizado">J</button>
                     <button onclick="addLetter('K')" id="K"class="boton_personalizado">K</button>
                     <button onclick="addLetter('L')" id="L"class="boton_personalizado">L</button>
-                    <button onclick="addLetter('<?php echo $lang['letra']?>')" id="Ç"class="boton_personalizado"><?php echo $lang['letra']?></button>
+                    <button onclick="addLetter('<?php echo $lang['letra']?>')" id="<?php echo $lang['letra']?>"class="boton_personalizado"><?php echo $lang['letra']?></button>
                 </div>
                 <div id="teclatFila3">
-                    <form id="form" name="enviarForm" onsubmit="return true" method="post">
+                    <form id="form" name="enviarForm" onsubmit="return true" method="post" action="">
                         <input type="hidden" id="puntuacio" name="puntuacio" value=0>
                         <input type="hidden" id="intents" name="intents" value=0>
                         <input type="hidden" id="victories" name="victories" value=0>
@@ -118,8 +143,7 @@
     </main>
     <script>
         <?php
-            echo "var php_var = '$randomWord';"; 
-            //echo "var points = '$points';"; 
+            echo "var php_var = '$randomWord';";
         ?>
     </script>
     <script src="./juego.js"></script>

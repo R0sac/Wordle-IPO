@@ -1,6 +1,19 @@
 <?php
     session_start();
-    include "configuracion.php"
+    if($_SESSION['booleanError']){
+        http_response_code(403);
+        echo "<div id='contForbidden'><h1>Error 403 - Forbidden</h1></div>";
+    }
+    include "configuracion.php";
+    if(isset($_SESSION["arrayPlayer"])){
+        $_SESSION["arrayPlayer"];
+    }
+    else{
+        $_SESSION["arrayPlayer"] = array();
+    }
+
+    $arrayPlayer = [$_SESSION['userName'],$_SESSION['puntuacio'],$_SESSION['intents'],$_SESSION['victories'],$_SESSION['derrotes']];
+    array_push($_SESSION["arrayPlayer"], $arrayPlayer);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +50,7 @@
             <img src="wordleBanner.png" id="imgEsquerraFinal">
         </div>
         <div id="contCentre">
+            <button id="darkmode" onclick="toggleTheme()"></button>
             <div id="contHeader">
                 <button onclick="document.location.href='./index.php';"><?php echo $lang['home']?></button>
                 <button onclick="document.location.href='./game.php';"><?php echo $lang['bottonPlay']?></button>
@@ -44,49 +58,19 @@
             <h1 id="titol">WORDLE</h1>
             <?php
                 echo "<p id='nameuser'>".$_SESSION['userName']."</p>";
-                echo "<p id='pointUser'>".$lang['puntos']."</p>";
-                echo "<p id='exUser'>".$lang['exitoses']."</p>";
-                echo "<p id='fallUser'>".$lang['errors']."</p>";
-                echo "<p id='triesUser'>".$lang['intents']."</p>";
+                echo "<p id='pointUser'>".$lang['puntos'].$arrayPlayer[1]."</p>";
+                echo "<p id='exUser'>".$lang['exitoses'].$arrayPlayer[3]."</p>";
+                echo "<p id='fallUser'>".$lang['errors'].$arrayPlayer[4]."</p>";
+                echo "<p id='triesUser'>".$lang['intents'].$arrayPlayer[2]."</p>";
             ?>
             <div class="bordeFinalParitda">
                 <h1 id="textFinalPartida"><?php echo $lang['ganar']?></h1>
             </div>
-            <div id="contTeclat">
-                <div id="teclatFila1">
-                    <button onclick="addLetter('Q')" id="Q" class="boton_personalizado">Q</button>
-                    <button onclick="addLetter('W')" id="W" class="boton_personalizado">W</button>
-                    <button onclick="addLetter('E')" id="E" class="boton_personalizado">E</button>
-                    <button onclick="addLetter('R')" id="R" class="boton_personalizado">R</button>
-                    <button onclick="addLetter('T')" id="T" class="boton_personalizado">T</button>
-                    <button onclick="addLetter('Y')" id="Y" class="boton_personalizado">Y</button>
-                    <button onclick="addLetter('U')" id="U" class="boton_personalizado">U</button>
-                    <button onclick="addLetter('I')" id="I" class="boton_personalizado">I</button>
-                    <button onclick="addLetter('O')" id="O" class="boton_personalizado">O</button>
-                    <button onclick="addLetter('P')" id="P" class="boton_personalizado">P</button>
-                </div>
-                <div id="teclatFila2">
-                    <button onclick="addLetter('A')" id="A"class="boton_personalizado">A</button>
-                    <button onclick="addLetter('S')" id="S"class="boton_personalizado">S</button>
-                    <button onclick="addLetter('D')" id="D"class="boton_personalizado">D</button>
-                    <button onclick="addLetter('F')" id="F"class="boton_personalizado">F</button>
-                    <button onclick="addLetter('G')" id="G"class="boton_personalizado">G</button>
-                    <button onclick="addLetter('H')" id="H"class="boton_personalizado">H</button>
-                    <button onclick="addLetter('J')" id="J"class="boton_personalizado">J</button>
-                    <button onclick="addLetter('K')" id="K"class="boton_personalizado">K</button>
-                    <button onclick="addLetter('L')" id="L"class="boton_personalizado">L</button>
-                    <button onclick="addLetter('<?php echo $lang['letra']?>')" id="Ç"class="boton_personalizado"><?php echo $lang['letra']?></button>
-                </div>
-                <div id="teclatFila3">
-                    <button onclick="jumpLine()" id="enviar" class="boton_personalizado_accio"><?php echo $lang['enviar']?></button>
-                    <button onclick="addLetter('Z')" id="Z" class="boton_personalizado">Z</button>
-                    <button onclick="addLetter('X')" id="X" class="boton_personalizado">X</button>
-                    <button onclick="addLetter('C')" id="C" class="boton_personalizado">C</button>
-                    <button onclick="addLetter('V')" id="V" class="boton_personalizado">V</button>
-                    <button onclick="addLetter('B')" id="B" class="boton_personalizado">B</button>
-                    <button onclick="addLetter('N')" id="N" class="boton_personalizado">N</button>
-                    <button onclick="addLetter('M')" id="M" class="boton_personalizado">M</button>
-                    <button onclick="deleteLetter()" id="borrar" class="boton_personalizado_accio"><?php echo $lang['borrar']?></button>
+            <div id="publicar">
+                <h1 id="textPublicar"><?php echo $lang['publicar']?></h1>
+                <div id="respPublicar">
+                    <button id="bRespPublS" onclick="document.location.href='./saveRecord.php';"><?php echo $lang['yes']?></button>
+                    <button id="bRespPublN" onclick="document.location.href='./index.php';"><?php echo "NO"?></button>
                 </div>
             </div>
         </div>
