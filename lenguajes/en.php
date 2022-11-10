@@ -12,6 +12,7 @@
        "placeholder" => "Username",
        "home" => "Home",
        "bottonPlay" => "Play",
+       "bottonCrono" => "Time Trial",
        "reset" => "Reset",
        "resetTitle" => "Reset Session",
        "resetP" => "Are you sure you want to reset the session data?",

@@ -58,6 +58,7 @@
                 <form method="POST" action="game.php" id="formUsuari">
                     <input type="text" id="inpUsuari" name="inpUsuari" onkeyup="bloquejarBoton()" placeholder="<?php echo $lang['placeholder']?>" value="<?php if(isset($_SESSION['userName'])){echo $_SESSION['userName'];}?>"><br>
                     <input type="submit" disabled id="botoUsuari" value="<?php echo $lang['bottonPlay']?>"/>
+                    <input type="submit" disabled id="botoCrono" value="<?php echo $lang['bottonCrono']?>"/>
                 </form>
                 <form method="POST" action="sortRanking.php">
                     <input type="hidden" id="arrayGames" name="arrayGames" value="">

@@ -493,6 +493,23 @@ form{
     border: 5px solid #683611;
 }
 
+#botoCrono{
+    margin-top:3%;
+    width: 40%;
+    height: 20%;
+    background-color: #683611;
+    color: #F6E8B8;
+    font-size: 100%;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+#botoCrono:hover{
+    background-color: #96581C;
+    color: #F6E8B8;
+    border: 5px solid #683611;
+}
+
 #botoPuntuacio{
     margin-top: 3%;
     width: 20%;
@@ -682,6 +699,15 @@ noscript a{
         color: #F6E8B8;
         border: 5px solid #F6E8B8;
     }
+    #botoCrono{
+        background-color: black;
+        color: #F6E8B8;
+    }
+    #botoCrono:hover{
+        background-color: #96581C;
+        color: #F6E8B8;
+        border: 5px solid #F6E8B8;
+    }
     #contHeader{
         background-color: #F6E8B8;
         border: 2px solid #F6E8B8;
@@ -831,6 +857,15 @@ noscript a{
         color: #F6E8B8;
     }
     .dark #botoUsuari:hover{
+        background-color: #96581C;
+        color: #F6E8B8;
+        border: 5px solid #F6E8B8;
+    }
+    .dark #botoCrono{
+        background-color: black;
+        color: #F6E8B8;
+    }
+    .dark #botoCrono:hover{
         background-color: #96581C;
         color: #F6E8B8;
         border: 5px solid #F6E8B8;

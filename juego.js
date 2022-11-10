@@ -93,8 +93,10 @@ function jumpLine() {
 function bloquejarBoton() {
     if(document.getElementById("inpUsuari").value==="") { 
         document.getElementById('botoUsuari').disabled = true; 
+        document.getElementById('botoCrono').disabled = true;
     } else { 
            document.getElementById('botoUsuari').disabled = false;  
+           document.getElementById('botoCrono').disabled = false;
     }
 }
 

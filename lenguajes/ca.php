@@ -12,6 +12,7 @@
               "placeholder" => "Nom d'usuari",
               "home" => "Inici",
               "bottonPlay" => "Jugar",
+              "bottonCrono" => "Contrarellotge",
               "reset" => "Reiniciar",
               "resetTitle" => "Reiniciar Sessió",
               "resetP" => "Estàs segur que vols reiniciar les dades de la sessió?",
