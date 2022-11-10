@@ -150,7 +150,7 @@ html, body {
     font-weight: bold;
     border-radius: 10px;
     position: absolute;
-    left: 1243px;
+    left: 1129px;
     top: 12px;
     font-size: 30px;
     font-family: Arial;
@@ -202,6 +202,16 @@ html, body {
     font-family: Arial;
     font-weight: bold;
     font-size: 70px;
+}
+#titolVictoria{
+    padding-top: 0px;
+    padding-bottom: 16px;
+    margin-top: -57px;
+    margin-bottom: 0px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 20px;
+    
 }
 #benvingut{
     font-size: 22px;
@@ -478,6 +488,22 @@ form{
     border-radius: 10px;
 }
 #botoUsuari:hover{
+    background-color: #96581C;
+    color: #F6E8B8;
+    border: 5px solid #683611;
+}
+
+#botoPuntuacio{
+    margin-top: 3%;
+    width: 20%;
+    height: 10%;
+    background-color: #683611;
+    color: #F6E8B8;
+    font-size: 100%;
+    font-weight: bold;
+    border-radius: 10px;
+}
+#botoPuntuacio:hover{
     background-color: #96581C;
     color: #F6E8B8;
     border: 5px solid #683611;

@@ -77,10 +77,10 @@
                 <h1 id="textFinalPartida"><?php echo $lang['ganar']?></h1>
             </div>
             <div id="publicar">
-                <h1>Vols publicar la teva puntuació? Tornaràs a la pantalla d'inci.</h1>
+                <h4 id="titolVictoria">Vols publicar la teva puntuació? Tornaràs a la pantalla d'inci.</h4>
                 <div id="respPublicar">
-                    <button onclick="document.location.href='./saveRecord.php';"><?php echo "SÍ"?></button>
-                    <button onclick="document.location.href='./index.php';"><?php echo "NO"?></button>
+                    <button id="botoPuntuacio" onclick="document.location.href='./saveRecord.php';"><?php echo "SÍ"?></button>
+                    <button id="botoPuntuacio" onclick="document.location.href='./index.php';"><?php echo "NO"?></button>
                 </div>
             </div>
         </div>
