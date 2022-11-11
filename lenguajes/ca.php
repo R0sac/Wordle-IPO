@@ -29,6 +29,10 @@
               "es" => "Castellano",
               "en" => "English",
               "ca" => "Català",
-              "file" => "catala_5.txt"
+              "file" => "catala_5.txt",
+              "publicar" => "Vols publicar la teva puntuació? Tornaràs a la pantalla d'inci.",
+              "yes" => "SÍ",
+              "volverInicio" => "Vols tornar a la pàgina d'inici?",
+              "volverBoton" => "TORNAR"
 
        );

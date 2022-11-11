@@ -2,6 +2,7 @@
     session_start();
     $_SESSION['booleanError'] = true;
     include "configuracion.php"
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +40,18 @@
         </div>
         <div id="contCentre">
             <button id="darkmode" onclick="toggleTheme()"></button>
-            
+            <?php
+                $fh = fopen('records.txt','r');
+                $arrayGames = [];
+                while ($line = fgets($fh)) {
+                    $lineReaden = explode(",",$line);
+                    array_push($arrayGames,array_slice($lineReaden,0,5));
+                }
+                fclose($fh);
+                $points = array_column($arrayGames,1);
+                array_multisort($points,SORT_DESC,$arrayGames);
+                echo "<p id='top1'>"."TOP 1: "."<br>".$arrayGames[0][0]."</p>";
+            ?>
             <div id="contHeader">
                 <button onclick="document.location.href='./index.php';"><?php echo $lang['home']?></button>
                 <button onclick="document.location.href='./game.php';"><?php echo $lang['bottonPlay']?></button>
@@ -80,7 +92,7 @@
                     <source src="groot.mp4" type="video/mp4">
                 </video>
             </div>
-            <p><?php echo $randomWord ?></p>
+            <!--<p><?php //echo $randomWord ?></p>-->
             <div id="contTimer">
                 <p id="time"></p>
             </div>
@@ -131,8 +143,7 @@
     </main>
     <script>
         <?php
-            echo "var php_var = '$randomWord';"; 
-            //echo "var points = '$points';"; 
+            echo "var php_var = '$randomWord';";
         ?>
     </script>
     <script src="./juego.js"></script>

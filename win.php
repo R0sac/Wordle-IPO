@@ -62,25 +62,15 @@
                 echo "<p id='exUser'>".$lang['exitoses'].$arrayPlayer[3]."</p>";
                 echo "<p id='fallUser'>".$lang['errors'].$arrayPlayer[4]."</p>";
                 echo "<p id='triesUser'>".$lang['intents'].$arrayPlayer[2]."</p>";
-                // echo "<br><br><br><br><br><br><br><br><br><br><br><br>";
-                // file_put_contents('records.txt', end($_SESSION["arrayPlayer"]));
-                // echo gettype(end($_SESSION["arrayPlayer"]));
-                // $fp = fopen('records.txt', 'a');//opens file in append mode
-                // for($i=0; $i<count(end($_SESSION["arrayPlayer"])); $i++){
-                //     fwrite($fp, end($_SESSION["arrayPlayer"])[$i].",");
-                // }
-                // fwrite($fp, "\n");
-                // fclose($fp);
-                // echo "File appended successfully";  
             ?>
             <div class="bordeFinalParitda">
                 <h1 id="textFinalPartida"><?php echo $lang['ganar']?></h1>
             </div>
             <div id="publicar">
-                <h1>Vols publicar la teva puntuació? Tornaràs a la pantalla d'inci.</h1>
+                <h1 id="textPublicar"><?php echo $lang['publicar']?></h1>
                 <div id="respPublicar">
-                    <button onclick="document.location.href='./saveRecord.php';"><?php echo "SÍ"?></button>
-                    <button onclick="document.location.href='./index.php';"><?php echo "NO"?></button>
+                    <button id="bRespPublS" onclick="document.location.href='./saveRecord.php';"><?php echo $lang['yes']?></button>
+                    <button id="bRespPublN" onclick="document.location.href='./index.php';"><?php echo "NO"?></button>
                 </div>
             </div>
         </div>

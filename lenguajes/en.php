@@ -29,5 +29,9 @@
        "es" => "Castellano",
        "en" => "English",
        "ca" => "Català",
-       "file" => "english_5.txt"
+       "file" => "english_5.txt",
+       "publicar" => "Want to post your score? You will be returned to the start screen.",
+       "yes" => "YES",
+       "volverInicio" => "Return to home page?",
+       "volverBoton" => "COME BACK"
 );

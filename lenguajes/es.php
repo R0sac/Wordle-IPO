@@ -29,5 +29,9 @@
             "es" => "Castellano",
             "en" => "English",
             "ca" => "Català",
-            "file" => "castellano_5.txt"
+            "file" => "castellano_5.txt",
+            "publicar" => "¿Quieres publicar tu puntuación? Volverás a la pantalla de incio.",
+            "yes" => "SÍ",
+            "volverInicio" => "¿Quieres volver a la página de inicio?",
+            "volverBoton" => "VOLVER"
     );

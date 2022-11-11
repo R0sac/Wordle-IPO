@@ -1,11 +1,8 @@
-//console.log(php_var);
+
 let userWord = "";
 let line = 1;
 const casellesFila = 5;
 let rowPoints = 0;
-// let points = 0;
-// let tries = 0;
-//document.getElementById("pointUser").innerHTML = "PUNTS: "+points;
 wins = 0;
 loses = 0;
 tries = 0;
@@ -14,6 +11,7 @@ min = 0;
 cronoPoint = 0;
 cronoSeg = 59;
 cronoMin = 1;
+boolGroot = true;
 function addLetter(letter){
     flag=false;
 	for (i=line;i<7;i++){
@@ -22,12 +20,9 @@ function addLetter(letter){
                 break
             }else{
                 if(typeof document.getElementById('' + i + j).value != "string"){
-                    // console.log(document.getElementById('' + i + j).value);
-                    // console.log(typeof document.getElementById('' + i + j).value)
                     document.getElementById('' + i + j).innerHTML=letter;
                     document.getElementById('' + i + j).value=letter;
                     userWord+=letter;
-                    //console.log(userWord);
                     flag=true;
                     break
                 }
@@ -54,7 +49,6 @@ function deleteLetter() {
                     document.getElementById('' + i + (j-1)).value= undefined;
                     document.getElementById('' + i + (j-1)).innerHTML = "";
                     userWord=userWord.substring(0,userWord.length-1);
-                    //console.log(userWord);
                     flag=true;
                 }
                 break
@@ -67,8 +61,6 @@ function deleteLetter() {
             
         }
         if (flag==true){
-            // console.log(document.getElementById('' + i + (j-1)).value);
-            // console.log(typeof document.getElementById('' + i + (j-1)).value)
             break
         }
     }
@@ -78,10 +70,6 @@ function deleteLetter() {
 function jumpLine() {
     let points = document.forms["enviarForm"]["puntuacio"].value;
     let tries = document.forms["enviarForm"]["intents"].value;
-
-    //console.log("mickey");
-    //console.log(document.getElementById('rw').value);
-    //console.log("mouse");
     if(userWord.length==5){
         checkWord(php_var, points, tries);
         line+=1;
@@ -99,12 +87,11 @@ function bloquejarBoton() {
 }
 
 function checkWord(randWord, points, tries) {
-    //console.log(randWord)
     posNonRep = 0;
     countGreen = 0;
     rowPoints = 0;
-    if(userWord == "GROOT"){
-        //Audio Groot
+    if(userWord == "GROOT" && boolGroot){
+        boolGroot = false;
         var sonido = document.createElement("iframe");
         sonido.setAttribute("src","grootAudio.mp3");
         document.body.appendChild(sonido);
@@ -116,7 +103,6 @@ function checkWord(randWord, points, tries) {
     }
     for(i=1;i<userWord.length+1;i++){
         let letterPosition = randWord.indexOf(userWord[i-1]);
-        //console.log(letterPosition);
         if (letterPosition === -1) {
             document.getElementById('' + line + i).style.background = "rgb(117, 117, 117)";
             if(!(["rgb(67, 160, 71)","rgb(228, 168, 29)"].includes(document.getElementById(document.getElementById('' + line + i).value).style.backgroundColor))){
@@ -131,16 +117,11 @@ function checkWord(randWord, points, tries) {
                 randWord = randWord.replace(randWord[letterPosition],"#");
                 countGreen+=1;
                 rowPoints+=((120-20*(line-1))/2)/casellesFila;
-                //console.log(randWord);
             }
         }    
     }
     for(i=1;i<userWord.length+1;i++){
-        //console.log(posNonRep);
         let letterPosition = randWord.indexOf(userWord[i-1]);
-        //console.log(letterPosition);
-        //console.log(i);
-        //console.log(posNonRep.includes(i));
         if((posNonRep.toString()).includes(i)){
 
         }else{
@@ -156,13 +137,11 @@ function checkWord(randWord, points, tries) {
                 }
                 randWord = randWord.replace(randWord[letterPosition],"#");
                 rowPoints+=((120-20*(line-1))/2)/(casellesFila*2);
-                //console.log(randWord);
             }  
         }  
     }
     
     if(countGreen==5){
-        //setTimeout(function() { alert("HAS GUANYAT"); }, 100);
         rowPoints = 120-20*(line-1);
         wins = parseInt(wins) + 1;
         points = parseInt(points) + rowPoints;
@@ -187,9 +166,7 @@ function checkWord(randWord, points, tries) {
         document.getElementById("victories").setAttribute("value", wins);
         document.getElementById("derrotes").setAttribute("value", loses);
         document.getElementById("form").setAttribute("action", "boolean403win.php");
-        // document.getElementById("form").setAttribute("onsubmit", "return false");
         document.getElementById("form").submit();
-        //setTimeout(function(){document.location.href="./win.php";},500)
         var nodes = document.getElementById("contTeclat").getElementsByTagName('*');
         for(var i = 0; i < nodes.length; i++){
             nodes[i].disabled = true;
@@ -197,7 +174,6 @@ function checkWord(randWord, points, tries) {
         
         
     } else if(line==6){
-        //setTimeout(function() { alert("HAS PERDUT"); }, 100);
         loses = parseInt(loses) + 1;
         points = parseInt(points) + rowPoints;
         tries = parseInt(tries) + 1;
@@ -207,9 +183,7 @@ function checkWord(randWord, points, tries) {
         document.getElementById("victories").setAttribute("value", wins);
         document.getElementById("derrotes").setAttribute("value", loses);
         document.getElementById("form").setAttribute("action", "boolean403lose.php");
-        // document.getElementById("form").setAttribute("onsubmit", "return false");
         document.getElementById("form").submit();
-        //setTimeout(function(){document.location.href="./lose.php";},500)
         var nodes = document.getElementById("contTeclat").getElementsByTagName('*');
         for(var i = 0; i < nodes.length; i++){
             nodes[i].disabled = true;
@@ -225,8 +199,6 @@ function checkWord(randWord, points, tries) {
         document.getElementById("victories").setAttribute("value", wins);
         document.getElementById("derrotes").setAttribute("value", loses);
         document.getElementById("form").setAttribute("onsubmit", "return false");
-
-        // alert("punts: "+points+", intents: "+tries+", victories: "+wins+", derrotes: "+loses)
     }
 
 }

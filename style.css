@@ -209,6 +209,39 @@ html, body {
     font-weight: bold;
     padding-top: 10px;
 }
+#textPublicar{
+    font-family: Arial;
+}
+#bRespPublS{
+    height: 5%;
+    width: 15%;
+    background-color: #683611;
+    color: #F6E8B8;
+    font-size: 100%;
+    font-weight: bold;
+    border-radius: 10px;
+    font-family: Arial;
+}
+#bRespPublN{
+    height: 5%;
+    width: 15%;
+    background-color: #683611;
+    color: #F6E8B8;
+    font-size: 100%;
+    font-weight: bold;
+    border-radius: 10px;
+    font-family: Arial;
+}
+#bRespPublT{
+    height: 5%;
+    width: 100px;
+    background-color: #683611;
+    color: #F6E8B8;
+    font-size: 100%;
+    font-weight: bold;
+    border-radius: 10px;
+    font-family: Arial;
+}
 
 #botoRanking{
     height: 5%;
@@ -279,6 +312,19 @@ html, body {
     margin-top: 2%;
 }
 
+#top1{
+    font-size: 22px;
+    font-family: Arial;
+    font-weight: bold;
+    float: left;
+    margin-left: 0%;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    position: absolute;
+    left: 474px;
+    top: 47px;
+}
+
 #nameuser{
     font-size: 22px;
     font-family: Arial;
@@ -322,7 +368,7 @@ html, body {
     font-family: Arial;
     font-weight: bold;
     float: right;
-    margin-right: 40%;
+    margin-right: 42%;
     margin-top: 0px;
 }
 
@@ -886,6 +932,18 @@ noscript a{
     .dark .bordeFinalParitda{
         border: 4px double #EEC76F;
     }
+    .dark #bRespPublS{
+        background-color: black;
+        color: #F6E8B8;
+    }
+    .dark #bRespPublN{
+        background-color: black;
+        color: #F6E8B8;
+    }
+    .dark #bRespPublT{
+        background-color: black;
+        color: #F6E8B8;
+    }
 
   }
 
@@ -914,7 +972,12 @@ noscript a{
         width: 10%;
         height: auto;
     }
-
+    
+    #top1{
+        left: 140px;
+        margin-top: -7px;
+        font-size: 15px;
+    }
     #botoRanking{
         width: 17%;
         left: 8px;
@@ -994,7 +1057,6 @@ noscript a{
         margin-left: 10%;
         margin-right: 10%;
     }
-
     #nameuser{
         font-size: 15px;
         margin-left: 6%;
@@ -1006,20 +1068,20 @@ noscript a{
     #exUser {
         top: 36px;
         font-size: 15px;
-        margin-left: -38px;
+        margin-left: -42px;
         position: relative;
     }
     #fallUser {
         top: 36px;
         font-size: 15px;
-        margin-right: -69px;
+        margin-right: -84px;
         position: relative;
     }
     #triesUser{
         font-size: 15px;
         margin-right: 35%;
         margin-bottom: 0px;
-        top: 35px;
+        top: 20px;
         position: relative;
     }
 
@@ -1065,6 +1127,19 @@ noscript a{
     .tableHallOfFame td{
         font-size: 11px;
     }
+    
+    #textPublicar{
+        font-size: 20px;
+        font-family: Arial;
+    }
+
+    .dark #textFinalPartida{
+        font-size: 30px;
+        font-family: Arial;
+        text-shadow: 0 0 80px rgba(236, 236, 236, 0.897);
+        letter-spacing: 0;
+        display: block;
+    }
 }
 
 
@@ -1089,6 +1164,12 @@ noscript a{
         left: 288px;
         top: 618px;
         font-size: 20px;
+    }
+    #top1 {
+        left: 15px;
+        top: 640px;
+        width: 15%;
+        height: auto;
     }
     #darkmode {
         left: 154px;
@@ -1192,15 +1273,15 @@ noscript a{
     }
     #exUser {
         top: 12px;
-        margin-left: 13px;
+        margin-left: 9px;
     }
     #fallUser {
         top: 12px;
-        margin-right: -19px;
+        margin-right: -34px;
     }
     #triesUser{
-        top: 12px;
-        left: 72px;
+        top: -7px;
+        left: -13px;
         position: relative;
     }
 
@@ -1260,6 +1341,11 @@ noscript a{
     }
     .tableHallOfFame{
         margin-top: 150px;
+    }
+
+    #textPublicar{
+        font-size: 20px;
+        font-family: Arial;
     }
 }
 
